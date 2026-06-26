@@ -513,11 +513,8 @@ background-color: #8B0000;
 display:flex;
 flex-direction:column;
 position: absolute;
-
 top:90px;
-
-width:100%;
-
+width:368px;
 }
 
 .nav-btn a{
@@ -526,7 +523,7 @@ width:100%;
 .nav-btn{
     padding-left: 20px;
     background-color: #8B0000;
-    width:100%;
+    width:368px;
 }
 
 
