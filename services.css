@@ -16,7 +16,9 @@
     justify-content: center;
 }
 
-
+#menu-btn{
+    display:none;
+}
 .text{
     display: flex;
     flex-direction: column;
@@ -209,3 +211,134 @@ padding-left: 25px;
     align-items: center;
 }   
 
+
+@media screen and (max-width:768px){
+   
+    .navbar{
+        width:368px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: fit-content;
+        min-height: 80px;
+    }
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+    
+    .text u{
+        font-size: 25px;
+    }
+    #tagline{
+        font-size:12px;
+        margin-left:25px;
+    }
+
+#menu-btn{
+
+display:block;
+
+font-size:25px;
+
+cursor:pointer;
+
+color:white;
+color:white;
+font-size: 30px;
+text-decoration: none;
+
+}
+
+
+#nav-links{
+    display:none;
+}
+#nav-links.active{
+background-color: #8B0000;
+display:flex;
+flex-direction:column;
+position: absolute;
+top:90px;
+width:368px;
+}
+
+.nav-btn a{
+    font-size: 15px;
+}
+.nav-btn{
+    padding-left: 20px;
+    background-color: #8B0000;
+    width:368px;
+}
+.headings{
+    padding-top:10px;
+}
+.headings h5{
+   
+    font-size: 15px;
+    padding-left: 5px;
+}
+.main-section{
+    padding: 0px;
+}
+.service-box{
+    width:368px;
+    margin-top: 0px;
+    
+}
+.box{
+    width:98%;
+}
+.service-card {
+    width:330px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentbox h4{
+    width:100%;
+  font-size: 15px;
+}
+.contentbox h6{
+    padding-left: 5px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.register1-btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+
+.footer-headline{
+    height:60px;
+    padding-top: 20px;
+}
+.quick-links{
+    height:30px;
+}
+.footer-contactinfo{
+    height: 30px;
+}
+.quick-links a{
+font-size: 10px;
+}
+
+.footer-contactinfo h5{
+    font-size: 10px;
+    margin-top: 20px;
+}
+.footer-tagline{
+    font-size: 10px;
+}
+.footer{
+    height: auto;
+}
+}

@@ -22,6 +22,9 @@
     justify-content: left;
     color:#FFFFFF;
 }
+#menu-btn{
+    display: none;
+}
 #main-text{
     font-size: 40px;
 }
@@ -294,4 +297,151 @@
     margin-top:10px;
     font-weight:600;
     color:#333;
+}
+
+
+@media screen and (max-width:768px){
+   
+    .navbar{
+        width:368px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: fit-content;
+        min-height: 80px;
+    }
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+    
+    .text u{
+        font-size: 25px;
+    }
+    #tagline{
+        font-size:12px;
+        margin-left:25px;
+    }
+
+#menu-btn{
+
+display:block;
+
+font-size:25px;
+
+cursor:pointer;
+
+color:white;
+color:white;
+font-size: 30px;
+text-decoration: none;
+
+}
+
+
+#nav-links{
+    display:none;
+}
+#nav-links.active{
+background-color: #8B0000;
+display:flex;
+flex-direction:column;
+position: absolute;
+top:90px;
+width:368px;
+}
+
+.nav-btn a{
+    font-size: 15px;
+}
+.nav-btn{
+    padding-left: 20px;
+    background-color: #8B0000;
+    width:368px;
+}
+.headline{
+    margin-top: 10px;
+}
+.hero-section{
+    width:368px;
+    height: 500px;
+
+}
+
+.headline h5{
+font-size: 15px;
+padding-left: 5px;
+}
+
+.track-card{
+    width: 95%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.status-card{
+    width:100%;
+
+    padding: 0px;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+}
+.status-grid{
+    grid-template-columns: 2fr 2fr;
+    gap:10px;
+}
+
+.timeline-section{
+    width:368px;
+    margin:30px auto;
+}
+.timeline-section h2{
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+.timeline{
+    width:98%;
+}
+.circle{
+    width:25px;
+    height: 25px;
+}
+.step p{
+  font-size: 8px;
+}
+.line{
+    width: 25px;
+}
+
+
+
+
+
+.footer-headline{
+    height:60px;
+    padding-top: 20px;
+}
+.quick-links{
+    height:30px;
+}
+.footer-contactinfo{
+    height: 30px;
+}
+.quick-links a{
+font-size: 10px;
+}
+
+.footer-contactinfo h5{
+    font-size: 10px;
+    margin-top: 20px;
+}
+.footer-tagline{
+    font-size: 10px;
+}
+.footer{
+    height: auto;
+}
+
+
 }

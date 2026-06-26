@@ -23,6 +23,9 @@
     justify-content: left;
     color:#FFFFFF;
 }
+#menu-btn{
+    display:none;
+}
 #main-text{
     font-size: 40px;
 }
@@ -100,7 +103,7 @@
 
 .login-card label{
     display: block;
-    margin-bottom: 8px;
+    margin-bottom:8px;
     font-size: 16px;
     font-weight: 600;
     color: #333;
@@ -229,3 +232,98 @@
     align-items: center;
 }
 
+
+
+@media screen and (max-width:768px){
+   
+    .navbar{
+        width:368px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: fit-content;
+        min-height: 80px;
+    }
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+    
+    .text u{
+        font-size: 25px;
+    }
+    #tagline{
+        font-size:12px;
+        margin-left:25px;
+    }
+
+#menu-btn{
+
+display:block;
+
+font-size:25px;
+
+cursor:pointer;
+
+color:white;
+color:white;
+font-size: 30px;
+text-decoration: none;
+
+}
+
+
+#nav-links{
+    display:none;
+}
+#nav-links.active{
+background-color: #8B0000;
+display:flex;
+flex-direction:column;
+position: absolute;
+top:90px;
+width:368px;
+}
+
+.nav-btn a{
+    font-size: 15px;
+}
+.nav-btn{
+    padding-left: 20px;
+    background-color: #8B0000;
+    width:368px;
+}
+.login-section{
+    padding:20px;
+}
+.login-card{
+    padding: 20px;
+}
+
+.footer-headline{
+    height:60px;
+    padding-top: 20px;
+}
+.quick-links{
+    height:30px;
+}
+.footer-contactinfo{
+    height: 30px;
+}
+.quick-links a{
+font-size: 10px;
+}
+
+.footer-contactinfo h5{
+    font-size: 10px;
+    margin-top: 20px;
+}
+.footer-tagline{
+    font-size: 10px;
+}
+.footer{
+    height: auto;
+}
+
+
+}
