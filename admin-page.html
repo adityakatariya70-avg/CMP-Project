@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin-page.css">
+</head>
+
+    <div class="header">
+            <div class="navbar">  
+            <div class="logo"> <img src="complaint-hub-logo.png" alt="Complaint Hub Logo" width="110px" height="110px"></div>
+            <div class="head">
+            <div class="text">
+            <h1 id="main-text"><u>COMPLAINT HUB</u></h1>
+            <p id="tagline">Your Voice, Our Responsibility</p>
+            </div> 
+        </div>
+        
+        <div class="data">
+      <div class="nav-btn" id="home-btn"><a href="#">Dashboard</a></div>
+     
+      <div class="nav-btn"><a href="index.html">Home</a></div>
+      <div class="nav-btn"><a href="">🔐 Logout</a></div>
+      
+        </div>
+       <div class="admin-logo"></div>
+       <span class="logo-text">Admin</span>
+    </div>
+        </div>
+
+        <div class="main-section"> 
+        <section class="statistics-section">
+
+    <h2>Dashboard Overview</h2>
+    <p>Monitor complaint statistics and track resolution progress.</p>
+
+    <div class="stats-container">
+
+        <div class="stat-card total">
+            <div class="stat-icon">📋</div>
+            <h3>Total Complaints</h3>
+            <div class="stat-number">125</div>
+            <p>Total complaints received by the system.</p>
+        </div>
+
+        <div class="stat-card pending">
+            <div class="stat-icon">⏳</div>
+            <h3>Pending Complaints</h3>
+            <div class="stat-number">45</div>
+            <p>Complaints waiting for review.</p>
+        </div>
+
+        <div class="stat-card progress1">
+            <div class="stat-icon">🔄</div>
+            <h3>In Progress</h3>
+            <div class="stat-number">32</div>
+            <p>Complaints currently being processed.</p>
+        </div>
+
+        <div class="stat-card resolved">
+            <div class="stat-icon">✅</div>
+            <h3>Resolved Complaints</h3>
+            <div class="stat-number">48</div>
+            <p>Successfully resolved complaints.</p>
+        </div>
+        
+
+    </div>
+
+</section>
+<div class="complaint-table-section">
+    <div class="heading-section"> 
+    <h2>Complaint Management Table</h2><p>View and manage all registered complaints.</p></div>
+
+<div class="table-controls">
+    <div class="search-box"> 
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text"
+           placeholder="Search Complaint ID..."></div>
+        
+            <select>
+                <option>All Complaints</option>
+                <option>Pending</option>
+                <option>In Progress</option>
+                <option>Resolved</option>
+
+            </select>
+        </div>
+
+<div class="complaint-table">
+<table>
+    <thead>
+   <tr>
+    <th>Complaint ID</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Action</th>
+   </tr>
+   </thead>
+   <tbody>
+    <tr>
+        <td>CMP001</td>
+        <td>Aditya</td>
+        <td>Water</td>
+        <td>22/06/2026</td>
+        <td><span class="pending2">Pending</span></td>
+        <td><button class="view-btn">  <i class="fa-solid fa-eye"></i> view</button></td>
+    </tr>
+     <tr>
+        <td>CMP002</td>
+        <td>himanshu</td>
+        <td>Electricity</td>
+        <td>19/06/2026</td>
+        <td><span class="resolved2">Resolved</span></td>
+        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+    </tr>
+     <tr>
+        <td>CMP004</td>
+        <td>rohit</td>
+        <td>road</td>
+        <td>20/06/2026</td>
+        <td><span class="progress2">Progress</span></td>
+        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+    </tr>
+    <tr>
+        <td>CMP005</td>
+        <td>sumit</td>
+        <td>road</td>
+        <td>20/06/2026</td>
+        <td><span class="resolved2">Resolved</span></td>
+        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+    </tr>
+    <tr>
+        <td>CMP007</td>
+        <td>aham</td>
+        <td>road</td>
+        <td>20/06/2026</td>
+        <td><span class="progress2">Progress</span></td>
+        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+    </tr>
+   </tbody>
+</table>
+
+</div>
+</div>
+<section id="complaint-details">
+
+    <h2>Complaint Details</h2>
+
+    <div class="details-grid">
+
+        <div class="detail-item">
+            <label>Complaint ID</label>
+            <p>CMP001</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Citizen Name</label>
+            <p>Aditya Katariya</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Email</label>
+            <p>aditya@gmail.com</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Phone Number</label>
+            <p>9876543210</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Category</label>
+            <p>Water Supply</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Location</label>
+            <p>Indore, Madhya Pradesh</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Date Submitted</label>
+            <p>22/06/2026</p>
+        </div>
+         <div class="detail-item">
+            <label>Complaint Image</label>
+            <p><a href="#">View Uploaded Image</a></p>
+        </div>
+
+    </div>
+
+    <div class="description-box">
+
+        <h3>Description</h3>
+
+        <p>
+            Water leakage near the main road causing
+            continuous water wastage and inconvenience
+            to local residents.
+        </p>
+
+    </div>
+
+    <div class="status-section">
+
+        <label>Current Status</label>
+
+        <select>
+            <option>Pending</option>
+            <option>In Progress</option>
+            <option>Resolved</option>
+            <option>Rejected</option>
+        </select>
+
+        <button>Update Status</button>
+
+    </div>
+
+</section>
+</div>
+
+  <div class="footer">
+      <div class="footer-headline"><h4>Complaint Hub</h4>
+    <h6>Your Voice, Our Responsibility</h6></div>
+    <div class="quick-links">
+        <div class="footerhome vpn"><a href="index.html">Home</a></div>
+        <div class="footerservices vpn"> <a href="services.html">Services</a>  </div>
+        <div class="footertrackcomplaint vpn"><a href="register-complaint.html">Register Complaint</a></h5></div>
+        <div class="footer-contact-details vpn"><a href="track-complaint.html">Track Complaint</a></div>
+         <div class="footer-contact-details vpn"><a href="contact.html">Contact</a></div>
+          <div class="footer-contact-details vpn"><a href="#">Admin Logout</a></div>
+    </div>
+    <div class="footer-contactinfo"><h5>📧 support@complainthub.com </h5>
+     <h5>   📞 +91 9876543210 </h5> <h5> <h5>📍 Indore, MP</h5>
+</h5></div>
+<div class="footer-tagline">© 2026 Complaint Hub. All Rights Reserved.</div>
+    </div>
+</body>
+</html>
