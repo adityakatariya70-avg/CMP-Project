@@ -54,7 +54,7 @@ else{
 }
 
 const number1=phone.value.trim();
-const validnumber=/^[0-9]$/;
+const validnumber=/^\d{10}$/;
 
 if(number1==""){
     phone.placeholder="Mobile Number Required";
