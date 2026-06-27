@@ -478,10 +478,12 @@ tr:hover {
 .statistics-section p{
   margin-bottom: 20px;
 }
-.complaints-table-section{
+.complaint-table-section{
   width:368px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+ 
 }
 .heading-section{
   margin-top: 35px;
@@ -493,9 +495,9 @@ tr:hover {
   font-size: 17px;
 }
 .table-controls{
+  margin-top:0px;;
   width:300px;
-  gap:10px;
-  margin-left: 160px;
+  gap:20px;
 }
 table-controls input,
 .table-controls select {
@@ -507,23 +509,62 @@ table-controls input,
 
 .search-box{
   width:60%;
+  height:50px;
 }
-.search-box i{
-  font-size: 15px;
+.search-box input{
+  font-size:9px;
+  padding:5px;
 }
 
-.complaint-table{
-  margin-left:30px;
-  width:98%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.complaint-table table{
-    min-width: 368px;   /* apni table ke hisaab se 600-800px */
-    border-collapse: collapse;
-}
 table th{
-  padding:10px;
+  padding:5px;
+  font-size: 10px;
+
+}
+table td{
+  padding:4px;
+  font-size: 10px;
+}
+
+td button{
+  padding:5px;
+}
+
+.pending2,.progress2,.resolved2{
+  padding: 4px;
+}
+
+
+th:first-child{
+  width:55px;
+}
+td:first-child{
+  width:55px;
+}
+th:nth-child(2){
+  width:55px;
+}
+th:nth-child(3){
+  width:55px;
+}
+
+table th:nth-child(4),
+table td:nth-child(4){
+  width:50px;
+}
+th:nth-child(5){
+  width:55px;
+}
+td:nth-child(5){
+  padding: 3px;
+}
+th:last-child{
+  width:60px;
+  padding: 5px;
+}
+td:last-child{
+  width:60px;
+  padding: 5px;
 }
 
 #complaint-details{

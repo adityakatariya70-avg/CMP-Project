@@ -84,11 +84,12 @@
 .main-container{
     margin-top: 20px;
     width: 700px;
-    height:850px;
+    height:870px;
     background: #fff8f8;
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+    
 }
 
 .main-container input,
@@ -101,6 +102,7 @@
     border: 2px solid #b30000;
     border-radius: 10px;
     font-size: 16px;
+    margin-left: 60px;
 }
 
 .main-container textarea{
@@ -114,12 +116,14 @@
     border-radius:10px;
     text-align:center;
     background:#fff8f8;
+    margin-left: 60px;
 
 }
 label{
     color:#333;
     font-weight:600;
     font-size:18px;
+    margin-left: 60px;
 }
 
 .submit{
@@ -150,7 +154,10 @@ label{
     border-radius: 8px;
     margin-top: 15px;
 }
+
 .complaint-id{
+margin-top: 15px;
+margin-left: 150px;
 width:300px;
 height:40px;
 background-color: #8B0000;
@@ -218,64 +225,68 @@ padding-left: 10px;
 
 @media screen and (max-width:768px){
    
-    .navbar{
-        width:368px;
-        display: flex;
-        flex-direction: row;
+     .header{
+        height:auto;
+    }
+  .navbar {
+    width: 368px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-        height: fit-content;
-        min-height: 80px;
-    
-    }
-    .logo img{
-        width:70px;
-        height:70px;
-    }
-    
-    .text u{
-        font-size: 25px;
-    }
-    #tagline{
-        font-size:12px;
-        margin-left:25px;
-    }
+    align-items: center;
+    height:fit-content;
+  }
+  .logo img {
+    order:1;
+    width: 70px;
+    height: 70px;
+  }
+  .head{
+    order:2;
+  }
 
-#menu-btn{
+  .text u {
+    font-size: 25px;
+  }
+  
+  #tagline {
+    font-size: 12px;
+    margin-left: 25px;
+  }
 
-display:block;
+  #menu-btn {
+    order:3;
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+  }
 
-font-size:25px;
+  #nav-links {
+    display: none;
+    order:4;
+  }
+  #nav-links.active {
+    background-color: #8b0000;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    width: 100%;
+  }
 
-cursor:pointer;
-
-color:white;
-color:white;
-font-size: 30px;
-text-decoration: none;
-
-}
-
-
-#nav-links{
-    display:none;
-}
-#nav-links.active{
-background-color: #8B0000;
-display:flex;
-flex-direction:column;
-position: absolute;
-top:90px;
-width:368px;
-}
-
-.nav-btn a{
+  .nav-btn a {
     font-size: 15px;
-}
-.nav-btn{
+  }
+  .nav-btn {
     padding-left: 20px;
-    background-color: #8B0000;
-    width:368px;
-}
+    background-color: #8b0000;
+    width: 368px;
+  }
+
 
 .heading h5{
     font-size:17px;
@@ -295,18 +306,27 @@ width:368px;
     width:98%;
     height:40px;
 }
+label{
+    margin-left: 0px;
+}
+.main-container input{
+    margin-left: 0px;
+}
 
 .upload{
+    margin-left: 0px;
     width:98%;
     display: flex;
     text-align: center;
     justify-content:center ;
 }
+
 .submit{
     width:80%;  
     margin-left:30px;
 }
 .complaint-id{
+    margin-left: 0px;
     width:99%;
     margin-top: 20px;
 }
@@ -315,6 +335,7 @@ width:368px;
     padding: 0px;
     margin:0px;
     margin-top: 5px;
+    
 }
 
 .footer-headline{
