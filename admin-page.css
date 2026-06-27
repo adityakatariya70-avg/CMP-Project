@@ -426,7 +426,7 @@ tr:hover {
 
 @media screen and (max-width: 768px) {
   .header {
-    width: 368px;
+  
     height: 120px;
   }
   .navbar {
