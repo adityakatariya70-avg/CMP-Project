@@ -430,7 +430,7 @@ tr:hover {
     height: 120px;
   }
   .navbar {
-    width: 368px;
+    width:100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -469,7 +469,7 @@ tr:hover {
     font-size: 18px;
   }
   .main-section{
-    width:368px;
+    width:100%;
   }
 
 .statistics-section{
@@ -479,7 +479,7 @@ tr:hover {
   margin-bottom: 20px;
 }
 .complaint-table-section{
-  width:368px;
+  width:368pxx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -568,6 +568,7 @@ td:last-child{
 }
 
 #complaint-details{
+  margin-top:200px;
   width:95%;
   padding:15px;
 }
