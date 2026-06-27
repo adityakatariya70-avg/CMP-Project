@@ -456,6 +456,7 @@
 
 @media screen and (max-width: 768px) {
     .header{
+      width:368px;
         height:auto;
     }
   .navbar {
@@ -505,16 +506,17 @@
     display: flex;
     flex-direction: column;
     position: static;
-    width: 100%;
+    width:370px;
   }
 
   .nav-btn a {
+    width:100%;
     font-size: 15px;
   }
   .nav-btn {
     padding-left: 20px;
     background-color: #8b0000;
-    width: 368px;
+    width:100%;
   }
 
   .herosection {

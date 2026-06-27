@@ -430,7 +430,7 @@ tr:hover {
     height: 120px;
   }
   .navbar {
-    width:100%;
+    width:368px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
