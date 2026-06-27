@@ -99,7 +99,7 @@
     padding: 12px;
     margin-top: 8px;
     margin-bottom: 15px;
-    border: 2px solid #b30000;
+    border: 2px solid gold;
     border-radius: 10px;
     font-size: 16px;
     margin-left: 60px;
@@ -111,7 +111,7 @@
 }
 .upload{
     width:60%;
-    border:2px dashed #8B0000;
+    border:2px dashed gold;
     padding:10px;
     border-radius:10px;
     text-align:center;
@@ -147,7 +147,7 @@ label{
     color:rgb(249, 241, 10);
 }
 .success-message{
-    
+    display:none;
     background: #d4edda;
     color: #155724;
     padding: 15px;
@@ -156,6 +156,7 @@ label{
 }
 
 .complaint-id{
+display:none;
 margin-top: 15px;
 margin-left: 150px;
 width:300px;
@@ -163,9 +164,9 @@ height:40px;
 background-color: #8B0000;
 border-radius: 10px;
 color:white;
-display: flex;
+/* display: flex;
 align-items: center;    
-padding-left: 10px;
+padding-left: 10px; */
 }
 
 .footer{

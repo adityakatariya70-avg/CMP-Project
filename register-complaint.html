@@ -35,9 +35,9 @@
         <div class="main-form">
             <div class="heading"><h2>Register Complaint</h2><h5>Report your issue quickly and efficiently.</h5></div>
             <div class="main-container">
-                <div class="name"><input type="text" placeholder="Enter your full name"></div>
-                <div class="email"><input type="email" placeholder="Enter your email address"></div>
-                <div class="phone"><input type="tel" placeholder="Enter your mobile number"></div>
+                <div class="name"><input type="text" placeholder="Enter your full name" id="name"></div>
+                <div class="email"><input type="email" placeholder="Enter your email address" id="email"></div>
+                <div class="phone"><input type="tel" placeholder="Enter your mobile number" id="phone"></div>
                 <div class="category">
          <label for="category">Complaint Category</label>
 
@@ -59,19 +59,19 @@
 
         <option value="government-office">Government Office</option>
 
-        <option value="other">Other</option>
+        <option value="other">Other</option></select>
         
     </div>
                 
-        <div class="description"><input type="text" placeholder="Describe your complaint in detail..."></div>
+        <div class="description"><input type="text" placeholder="Describe your complaint in detail..." id="description"></div>
 
-        <div class="location"><input type="text" placeholder="Enter Complaint Location"></div>
+        <div class="location"><input type="text" placeholder="Enter Complaint Location" id="location"></div>
 
-        <div class="upload"><input type="file" placeholder="Upload Supporting Image"></div>
-         <div class="date"><input type="date" placeholder="Date of Complaint"></div>
+        <div class="upload"><input type="file" placeholder="Upload Supporting Image" id="upload"></div>
+         <div class="date"><input type="date" placeholder="Date of Complaint" id="date"></div>
         
-        <button class="submit">Submit Complaint</button>
-        <div class="success-message">Complaint Submitted Successfully!</div>
+        <button class="submit" id="submit-btn">Submit Complaint</button>
+        <div class="success-message" id="success-message">Complaint Submitted Successfully!</div>
         <div class="complaint-id">Your Complaint ID : </div>
             </div>
         </div>
@@ -92,5 +92,5 @@
 
 
         </body>
-        <script src="script.js"></script>
+        <script src="register-complaint.js"></script>
         </html>
