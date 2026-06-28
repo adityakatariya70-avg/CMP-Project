@@ -48,6 +48,20 @@
     text-decoration: none;
 }
 
+.live-box{
+    display:none;
+    margin-left: 60px;
+    margin-bottom: 8px;
+    padding: 5px;
+    height:fit-content;
+    width: fit-content;
+    border:2px solid #050505;
+    border-radius:5px;
+    background-color: #FFF8DC;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .nav-btn a:hover{
     
     background-color: #8B0000;
@@ -67,9 +81,8 @@
     display:flex ;
     flex-direction: column;
     align-items: center;
-    
-
 }
+
 .heading{
     margin-top: 20px;
     color:#8B0000;
@@ -82,9 +95,12 @@
     padding-top: 10px;
 }
 .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     margin-top: 20px;
     width: 700px;
-    height:870px;
+    height:fit-content;
     background: #fff8f8;
     padding: 25px;
     border-radius: 20px;
@@ -96,31 +112,30 @@
 .main-container select,
 .main-container textarea{
     width: 80%;
-    padding: 12px;
+    padding: 8px;
     margin-top: 8px;
     margin-bottom: 15px;
-    border: 2px solid gold;
+    border: 3px solid orchid;
     border-radius: 10px;
     font-size: 16px;
     margin-left: 60px;
 }
 
-.main-container textarea{
+/* .main-container textarea{
     height: 120px;
     resize: none;
-}
-.upload{
-    width:60%;
-    border:2px dashed gold;
-    padding:10px;
+} */
+
+.upload input{
+    width:80%;
+    border:2px solid orchid;
+    padding:8px;
     border-radius:10px;
     text-align:center;
     background:#fff8f8;
     margin-left: 60px;
-
 }
 label{
-    color:#333;
     font-weight:600;
     font-size:18px;
     margin-left: 60px;
@@ -157,16 +172,16 @@ label{
 
 .complaint-id{
 display:none;
-margin-top: 15px;
-margin-left: 150px;
-width:300px;
-height:40px;
+height: fit-content;
+width: fit-content;
+font-size: 18px;
+margin-top: 25px;
+margin-left: 182px;
+padding: 10px;
+font-weight: 400;
 background-color: #8B0000;
 border-radius: 10px;
 color:white;
-/* display: flex;
-align-items: center;    
-padding-left: 10px; */
 }
 
 .footer{
@@ -298,7 +313,7 @@ padding-left: 10px; */
 
 .main-container{
     width:90%;
-    height:800px;
+    height:fit-content;
 }
 
 .main-container input,
