@@ -63,6 +63,7 @@
 }
 
 .hero-section{
+
     width:100%;
     height:610px;
     background-color: #FFF8DC;
@@ -81,7 +82,18 @@
     align-items: center;
 }
 
-
+.live-box{
+    display:none;
+    margin-bottom: 8px;
+    padding: 5px;
+    height:fit-content;
+    width: fit-content;
+    border:2px solid #050505;
+    border-radius:5px;
+    background-color: #FFF8DC;
+    font-size: 14px;
+    font-weight: 500;
+}
 .track-card{
     width: 700px;
     margin-top:100px;   
@@ -189,6 +201,7 @@
     align-items: center;
 }
 .status-card{
+    display: none;
     width: 800px;
     margin: 50px auto;
     background: #fff;
@@ -235,6 +248,7 @@
     border-bottom: 1px solid #eee;
 }
 .timeline-section{
+    display:none;
     width:90%;
     max-width:1000px;
     margin:60px auto;
@@ -385,13 +399,27 @@ padding-left: 5px;
     margin-top: 20px;
     padding: 20px;
 }
+.live-box{
+    display:none;
+    margin-bottom: 8px;
+    padding: 5px;
+    height:fit-content;
+    width: fit-content;
+    border:2px solid #050505;
+    border-radius:5px;
+    background-color: #FFF8DC;
+    font-size: 14px;
+    font-weight: 500;
+}
 
 .status-card{
+   
     width:95%;
     padding: 0px;
     display: flex;
     flex-direction:column ;
     align-items: center;
+    display: none;
 }
 .status-grid{
     grid-template-columns: 2fr 2fr;
