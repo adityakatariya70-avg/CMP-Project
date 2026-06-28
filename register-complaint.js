@@ -27,15 +27,33 @@ const upload_live_box = document.getElementById("upload-live-box");
 const date_live_box = document.getElementById("date-live-box");
 
 
-name.addEventListener("blur", validname);
-email.addEventListener("blur", validemail);
-phone.addEventListener("blur", validnumber);
-description.addEventListener("blur",validdescription);
-location4.addEventListener("blur",validlocation);
+name.addEventListener("input", validname);
+email.addEventListener("input", validemail);
+phone.addEventListener("input", validnumber);
+description.addEventListener("input",validdescription);
+location4.addEventListener("input",validlocation);
 category.addEventListener("change",validcategory);
 upload.addEventListener("change", validupload);
-date.addEventListener("blur",validdate);
+date.addEventListener("change",validdate);
 submit.addEventListener("click",submitform);
+
+
+
+
+function resetform(){
+  const reset=document.getElementById("reset-form").reset();
+
+  name.style.border="";
+  email.style.border="";
+  phone.style.border="";
+  category.style.border="";
+  description.style.border="";
+  location4.style.border="";
+  upload.style.border="";
+  date.style.border="";
+
+}
+
 
 function validname() {
   const name1 = name.value.trim();
@@ -207,6 +225,8 @@ if(
     success.style.display="block";
     uniqueid.style.display="block";
     uniqueid.textContent="Your Complaint ID : " + Complaintid;
+    resetform();
+    
 }
 
 }
