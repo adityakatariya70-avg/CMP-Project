@@ -11,6 +11,10 @@ const submit = document.getElementById("submit-btn");
 const complaintstatus = document.getElementById("complaint-status");
 const timelinestatus = document.getElementById("timeline-status");
 const herosection = document.getElementById("hero-section");
+const failedlivebox=document.getElementById("failedlivebox");
+const failedbtn=document.getElementById("failed-btn")
+const trackcard=document.getElementById("track-card");
+
 
 const namelivebox = document.getElementById("id-live-box");
 const numberlivebox = document.getElementById("no-live-box");
@@ -18,7 +22,7 @@ const numberlivebox = document.getElementById("no-live-box");
 complaintidcolumn.addEventListener("input", validid);
 numbercolumn.addEventListener("input", validnumber);
 submit.addEventListener("click", trackbtn);
-
+failedbtn.addEventListener("click",resetform);
 
 
 function resetform(){
@@ -27,6 +31,8 @@ function resetform(){
   numbercolumn.value="";
   complaintidcolumn.style.border="";
   numbercolumn.style.border="";
+  failedlivebox.style.display="none";
+    trackcard.style.display="block";
 }
 
 
@@ -83,10 +89,7 @@ if(foundcomplaint){
   return true;
 }
 else{
-    submit.innerHTML="Complaint Not Found!!";
-    submit.style.background="yellow";
-    submit.style.color="black";
-     resetform();
+   
   }
 
 }
@@ -96,8 +99,12 @@ function trackbtn() {
       
      complaintstatus.style.display="block";
      timelinestatus.style.display="block";
-     submit.innerHTML="Complaint Found";
      herosection.style.display="none";
+  }
+  else{
+ failedlivebox.style.display="block";
+  trackcard.style.display="none";
+ 
   }
   
 }

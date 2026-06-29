@@ -11,6 +11,7 @@ const contact_text = document.getElementById("contact-text");
 const contact_button = document.getElementById("contact-send-btn");
 const livebox = document.getElementById("livebox");
 
+
 contact_button.addEventListener("click",validinfo);
 
 function validinfo(){
@@ -48,7 +49,7 @@ function validname() {
    else if (!validname1.test(name)) {
      livebox.style.display="block";
       contact_name.style.border="2px solid red";
-     livebox.textContent="Name is to Long!!";
+     livebox.textContent="Invalid Name";
     return false;
   }
   
