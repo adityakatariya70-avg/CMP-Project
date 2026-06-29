@@ -115,10 +115,17 @@
     padding: 8px;
     margin-top: 8px;
     margin-bottom: 15px;
-    border: 3px solid orchid;
+    border: 3px solid goldenrod;
     border-radius: 10px;
     font-size: 16px;
     margin-left: 60px;
+}
+ .main-container input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: 3px solid #d89c00;
+    box-shadow: none;
 }
 
 /* .main-container textarea{
@@ -128,7 +135,7 @@
 
 .upload input{
     width:80%;
-    border:2px solid orchid;
+    border:2px solid goldenrod;
     padding:8px;
     border-radius:10px;
     text-align:center;
