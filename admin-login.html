@@ -29,17 +29,17 @@
           <div id="menu-btn">☰</div>
     </div>
         </div>
-        <div class="login-section">
-            <div class="login-card">
+        <div class="login-section" id="login-section">
+            <div class="login-card" id="login-card">
                 <h1>Admin Login</h1><p>Sign in to access the Complaint Hub administrative dashboard.</p>
-                <label></label><input type="email" placeholder="Enter Email ID"></label>
-                <label></label><input type="password" placeholder="Enter Password"></label>
-                <div class="remember">
+                <label></label><input id="email" type="email" placeholder="Enter Admin Email ID"></label>
+                <label></label><input id="password"  type="password" placeholder="Enter Password"></label>
+                <!-- <div class="remember" id="remember">
                 <input type="checkbox">
                 <span>Remember Me</span>
-            </div>
-              <a href="admin-page.html">  <button class="login-btn" class="login">Login</button></a>
-                <div class="bottom-text">
+            </div> -->
+              <button id="login-btn" class="login-btn" class="login">Login</button>
+                <div class="bottom-text" id="bottom-text">
             Complaint Hub Administration Portal
         </div>
             </div>
@@ -60,5 +60,5 @@
 <div class="footer-tagline">© 2026 Complaint Hub. All Rights Reserved.</div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="admin-login.js"></script>
 </html>
