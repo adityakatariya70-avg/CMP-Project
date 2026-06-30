@@ -72,6 +72,7 @@
 }
 
 .login-card {
+  position: relative;
   width: 100%;
   max-width: 500px;
   background: white;
@@ -79,7 +80,14 @@
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-
+#eye{
+    position: absolute;
+    right: 50px;
+    top: 55%;
+    
+    cursor: pointer;
+    font-size: 27px;
+}
 .login-card h1 {
   text-align: center;
   color: #8b0000;
@@ -101,8 +109,8 @@
   color: #333;
 }
 
-.login-card input[type="email"],
-.login-card input[type="password"] {
+.login-card input
+ {
   width: 100%;
   padding: 14px;
   border: 2px solid #ddd;
@@ -118,7 +126,7 @@
   box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
 }
 
-.remember {
+/* .remember {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -129,7 +137,7 @@
 .remember input {
   width: 18px;
   height: 18px;
-}
+} */
 
 .login-btn {
   width: 100%;
