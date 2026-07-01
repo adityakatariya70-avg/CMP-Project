@@ -29,8 +29,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
        <div class="admin-logo"></div>
        <span class="logo-text">Admin</span>
     </div>
-
-    
         </div>
 
         <div class="main-section"> 
@@ -44,59 +42,55 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <div class="stat-card total">
             <div class="stat-icon">📋</div>
             <h3>Total Complaints</h3>
-            <div class="stat-number">125</div>
+            <div id="total-number" class="stat-number">125</div>
             <p>Total complaints received by the system.</p>
         </div>
 
         <div class="stat-card pending">
             <div class="stat-icon">⏳</div>
             <h3>Pending Complaints</h3>
-            <div class="stat-number">45</div>
+            <div id="pending-number" class="stat-number">45</div>
             <p>Complaints waiting for review.</p>
         </div>
 
         <div class="stat-card progress1">
             <div class="stat-icon">🔄</div>
             <h3>In Progress</h3>
-            <div class="stat-number">32</div>
+            <div id="progress-number"  class="stat-number">32</div>
             <p>Complaints currently being processed.</p>
         </div>
 
         <div class="stat-card resolved">
             <div class="stat-icon">✅</div>
             <h3>Resolved Complaints</h3>
-            <div class="stat-number">48</div>
+            <div id="resolved-number" class="stat-number">48</div>
             <p>Successfully resolved complaints.</p>
         </div>
-        
-
     </div>
-
 </section>
 
 <div class="complaint-table-section">
     <div class="heading-section"> 
     <h2>Complaint Management Table</h2><p>View and manage all registered complaints.</p></div>
 
-<div class="table-controls">
+<div class="table-controls" id="table-controls">
     <div class="search-box"> 
     <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text"
-           placeholder="Search Complaint ID.."></div>
+    <input type="text" id="search-box" placeholder="Search Complaint ID.."></div>
         
-            <select>
-                <option>All Complaints</option>
-                <option>Pending</option>
-                <option>In Progress</option>
-                <option>Resolved</option>
+            <select id="filter-box">
+                <option value="All">All Complaints</option>
+                <option value="Pending">Pending</option>
+                <option value="Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
 
             </select>
         </div>
 
-<div class="complaint-table">
-<table>
-    <thead>
-   <tr>
+<div class="complaint-table" id="complaint-table">
+<table id="table">
+    <thead id="table-head">
+   <tr id="table-row">
     <th>Complaint ID</th>
     <th>Name</th>
     <th>Category</th>
@@ -105,14 +99,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <th>Action</th>
    </tr>
    </thead>
-   <tbody>
+   <tbody id="table-body">
     <tr>
-        <td>CMP001</td>
+        <td id="table-row">CMP001</td>
         <td>Aditya</td>
         <td>Water</td>
         <td>22/06/2026</td>
         <td><span class="pending2">Pending</span></td>
-        <td><button class="view-btn">  <i class="fa-solid fa-eye"></i> view</button></td>
+        <td><button class="view-btn" id="view-btn">  <i class="fa-solid fa-eye"></i> view</button></td>
     </tr>
      <tr>
         <td>CMP002</td>
@@ -120,7 +114,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <td>Electricity</td>
         <td>19/06/2026</td>
         <td><span class="resolved2">Resolved</span></td>
-        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+        <td><button class="view-btn" id="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
     </tr>
      <tr>
         <td>CMP004</td>
@@ -128,7 +122,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <td>road</td>
         <td>20/06/2026</td>
         <td><span class="progress2">Progress</span></td>
-        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+        <td><button class="view-btn" id="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
     </tr>
     <tr>
         <td>CMP005</td>
@@ -136,7 +130,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <td>road</td>
         <td>20/06/2026</td>
         <td><span class="resolved2">Resolved</span></td>
-        <td><button class="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
+        <td><button class="view-btn" id="view-btn"> <i class="fa-solid fa-eye"></i> view</button></td>
     </tr>
     <tr>
         <td>CMP007</td>
@@ -245,5 +239,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <div class="footer-tagline">© 2026 Complaint Hub. All Rights Reserved.</div>
     </div>
 </body>
-
+<script src="admin-page.js"></script>
 </html>

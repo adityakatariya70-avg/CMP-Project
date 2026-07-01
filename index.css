@@ -404,6 +404,19 @@
   border-radius: 5px;
   border:2px solid #555;
 }
+#submit-live-box{
+  width:380px;
+  height:180px;
+  border-radius:10px;
+  position: absolute;
+  top:270%;
+  left:40%;
+  background-color: #8b0000;
+  display:none;
+  text-align:center;
+  align-content: center;
+  padding:15px;
+}
 
 .footer {
   width: 100%;
@@ -682,9 +695,10 @@
   }
   .contact-form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 350px;
+    height: 370px;
     order: 1;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
@@ -693,6 +707,7 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
+    gap:20px;
     justify-content: center;
   }
   .contact-name {
