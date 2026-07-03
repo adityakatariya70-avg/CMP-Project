@@ -11,8 +11,13 @@ const contact_text = document.getElementById("contact-text");
 const contact_button = document.getElementById("contact-send-btn");
 const livebox = document.getElementById("livebox");
 const submitlivebox = document.getElementById("submit-live-box");
+const cross = document.getElementById("cross");
 
 
+
+cross.addEventListener("click",function(){
+  submitlivebox.style.display="none";
+});
 contact_button.addEventListener("click",validinfo);
 
 function validinfo(){
@@ -22,11 +27,8 @@ function validinfo(){
   validmessage()
   )
   {
-    submitlivebox.style.display="block";
-    submitlivebox.textContent="Successfully Submitted!!  We will contact you soon.";
-    submitlivebox.style.color="white";
-    submitlivebox.style.fontSize="20px";
-    submitlivebox.style.fontWeight="bold";
+    submitlivebox.style.display="flex";
+   
     reset();
   }
 }
