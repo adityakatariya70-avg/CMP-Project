@@ -1,13 +1,25 @@
+
+
+const logout=document.getElementById("logout");
 const tablecontrols = document.getElementById("table-controls");
 const searchbox = document.getElementById("search-box-main");
 const filterbox = document.getElementById("filter-box");
 const complaintable = document.getElementById("complaint-table");
 const tablerow = document.getElementById("table-row");
 const rows = document.querySelectorAll("#table-body tr");
-const viewbtn = document.getElementsByClassName("view-btn");
+const viewbtn = document.querySelectorAll(".view-btn");
+const complaintdetails =document.getElementById("complaint-details");
 
 searchbox.addEventListener("input", search_complaint);
 filterbox.addEventListener("change", filter_complaint);
+logout.addEventListener("click",logout_page);
+
+
+  
+function logout_page(){
+ window.location.replace("admin-login.html"); 
+ 
+}
 
 function filter_complaint() {
   const value = filterbox.value;
