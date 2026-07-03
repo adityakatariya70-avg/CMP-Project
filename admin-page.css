@@ -70,12 +70,15 @@
   padding-right: 20px;
 }
 
+
 .main-section {
+  
   background-color: #fff8dc;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height:1350px;
 }
 
 .statistics-section {
@@ -287,6 +290,7 @@ tr:hover {
 }
 
 #complaint-details {
+  display: none;
   width: 80%;
   margin: 50px auto;
   background: white;
