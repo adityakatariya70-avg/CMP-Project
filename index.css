@@ -538,6 +538,7 @@
   #nav-links {
     display: none;
     order:4;
+
   }
   #nav-links.active {
     background-color: #8b0000;
@@ -545,11 +546,12 @@
     flex-direction: column;
     position: absolute;
     top:100%;
-    left: 0;
-    width:100%;
+    left: 0%;
+    width:390px;
   }
 
   .nav-btn a {
+    padding-left: 10px;
     width:100%;
     font-size: 15px;
     display: block;
