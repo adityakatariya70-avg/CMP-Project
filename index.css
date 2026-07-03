@@ -498,7 +498,7 @@
     }
   .navbar {
     position: relative;
-    width: 368px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -535,9 +535,28 @@
     text-decoration: none;
   }
 
-  #nav-links {
-    display: none;
-    order:4;
+  
+    #nav-links{
+    display:flex;
+    flex-direction:column;
+
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:80%;
+    height:10vh;
+
+    background:#8b0000;
+
+    
+
+    z-index:9999;
+
+    
+
+  
 
   }
   #nav-links.active {
@@ -546,8 +565,10 @@
     flex-direction: column;
     position: absolute;
     top:100%;
+    right: 0%;
     left: 0%;
-    width:390px;
+    width:100%;
+    z-index: 1000;
   }
 
   .nav-btn a {
@@ -560,6 +581,8 @@
     padding-left:15px 20px;
     background-color: #8b0000;
     width:100%;
+    
+border-bottom:1px solid rgba(255,255,255,.2);
   }
 
   .herosection {
