@@ -16,6 +16,7 @@ const date = document.getElementById("date");
 const submit = document.getElementById("submit-btn");
 const success = document.getElementById("success-message");
 const uniqueid = document.getElementById("complaint-id");
+const cross = document.getElementById("cross");
 
 const name_live_box = document.getElementById("name-live-box");
 const email_live_box = document.getElementById("email-live-box");
@@ -227,18 +228,18 @@ if(
     success.style.display="block";
     uniqueid.style.display="block";
     uniqueid.textContent="Your Complaint ID : " + Complaintid;
-    submit.innerHTML="Remember Your Complaint ID for Tracking";
-    submit.style.fontSize="15px";
-    setTimeout(function(){
-    success.style.display="none";
-  }, 2500);
-  setTimeout(function(){
-    uniqueid.style.display="none";
-    submit.innerHTML="Submit Complaint";
-  }, 10000);
+    cross.style.display="block";
+    
+  
     resetform();
     
 }
 
+cross.addEventListener("click",function(){
+    uniqueid.style.display="none";
+    success.style.display="none";
+    cross.style.display="none";
+
+})
 }
 

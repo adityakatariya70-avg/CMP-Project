@@ -146,8 +146,8 @@
     font-weight: 500;
     padding: 20px;
     border-radius: 10px;
-    background: #2e9e44;
-    color: #f5f5f5;
+    background: white;
+    color: black;
     box-shadow: 0 0 20px rgba(0,0,0,.3);
     display: none;
     z-index: 1000;

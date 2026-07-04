@@ -76,7 +76,9 @@
   justify-content: end;
   align-items: center;
 }
-
+body{
+  background-color: #fff8dc;
+}
 .live-box {
   display: none;
   margin-bottom: 8px;
@@ -90,6 +92,9 @@
   font-weight: 500;
 }
 
+.label{
+  margin-left: 10px;
+}
 #failedlivebox {
   position: fixed;
   top: 60%;
@@ -268,11 +273,13 @@
   border-bottom: 1px solid #eee;
 }
 .timeline-section {
+  border-radius: 20px;
   display: none;
   width: 90%;
   max-width: 1000px;
   margin: 60px auto;
   text-align: center;
+  background-color: white;
 }
 
 .timeline-section h2 {
@@ -447,7 +454,7 @@
   }
 
   .status-card {
-    width: 95%;
+    width: 93%;
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -458,9 +465,10 @@
     grid-template-columns: 2fr 2fr;
     gap: 10px;
   }
+  
 
   .timeline-section {
-    width: 368px;
+    width: 98%;
     margin: 30px auto;
   }
   .timeline-section h2 {
