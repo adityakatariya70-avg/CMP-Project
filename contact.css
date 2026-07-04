@@ -146,7 +146,8 @@
     font-weight: 500;
     padding: 20px;
     border-radius: 10px;
-    background: white;
+    background: #2e9e44;
+    color: #f5f5f5;
     box-shadow: 0 0 20px rgba(0,0,0,.3);
     display: none;
     z-index: 1000;
@@ -283,11 +284,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .header {
+    .header {
     height: auto;
   }
   .navbar {
-    width: 368px;
+    position: relative;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -325,26 +327,41 @@
   }
 
   #nav-links {
-    display: none;
-    order: 4;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 10vh;
+    background: #8b0000;
+    z-index: 9999;
   }
   #nav-links.active {
     background-color: #8b0000;
     display: flex;
     flex-direction: column;
-    position: static;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    left: 0%;
     width: 100%;
+    z-index: 1000;
   }
 
   .nav-btn a {
+    padding-left: 10px;
+    width: 100%;
     font-size: 15px;
+    display: block;
   }
   .nav-btn {
-    padding-left: 20px;
+    padding-left: 15px 20px;
     background-color: #8b0000;
-    width: 368px;
-  }
+    width: 100%;
 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
   .headline {
     height: 120px;
   }
@@ -353,7 +370,7 @@
   }
   .headline h4 {
     font-size: 14px;
-    padding-left: 10px;
+    padding-left: 18px;
   }
   .hero-section {
     display: flex;
@@ -378,6 +395,10 @@
     padding-left: 5px;
   }
 
+  #livebox2{
+    width:80%;
+    margin-right:10%;
+  }
   .contact-details {
     width: 95%;
   }

@@ -222,9 +222,20 @@ if(
   validupload()&&
   validdate() 
 ){  
+
+  
     success.style.display="block";
     uniqueid.style.display="block";
     uniqueid.textContent="Your Complaint ID : " + Complaintid;
+    submit.innerHTML="Remember Your Complaint ID for Tracking";
+    submit.style.fontSize="15px";
+    setTimeout(function(){
+    success.style.display="none";
+  }, 2500);
+  setTimeout(function(){
+    uniqueid.style.display="none";
+    submit.innerHTML="Submit Complaint";
+  }, 10000);
     resetform();
     
 }

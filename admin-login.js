@@ -3,7 +3,9 @@ const navLinks = document.getElementById("nav-links");
 
 menuBtn.onclick = function () {
   navLinks.classList.toggle("active");
+
 };
+
 
 const loginsection = document.getElementById("login-section");
 const logincard = document.getElementById("login-card");
