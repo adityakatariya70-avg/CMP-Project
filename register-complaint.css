@@ -346,12 +346,18 @@ font-weight: 600;
     font-size:17px;
 }
 .main-form{
-    height: 950px;
+    height: 1000px;
 }
 
 .main-container{
     width:90%;
     height:fit-content;
+}
+.font-icons{
+    
+width:fit-content;
+height:fit-content;
+
 }
 
 .main-container input,
@@ -391,9 +397,15 @@ label{
     margin-top: 5px;
     
 }
+#upload{
+    padding: 5px;
+}
 #cross{
     margin-left:0px;
     margin-top: 10px;
+}
+#date{
+    size: 8px;
 }
 
 .live-box{
