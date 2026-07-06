@@ -61,14 +61,14 @@ function validname() {
   const validname = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
 
   if (name1 == "") {
-    name.style.border = "3px solid red";
+    name.style.border = "2 px solid red";
     name_live_box.style.display = "block";  
     name_live_box.textContent = "Name Required";
     return false;
   } else if (!validname.test(name1)) {
     name_live_box.textContent = "Enter valid name";
     name_live_box.style.display = "block";
-    name.style.border = "3px solid red";
+    name.style.border = "2px solid red";
     return false;
   } else {
     name.style.border = "3px solid green";
@@ -82,12 +82,12 @@ function validemail() {
   const validemail = /^[A-Za-z0-9._+-]+@[A-Za-z0-9._+-]+\.[A-Za-z0-9]{2,}$/;
 
   if (email1 == "") {
-    email.style.border = "3px solid red";
+    email.style.border = "2px solid red";
     email_live_box.style.display = "block";
     email_live_box.textContent = "Email Required";
     return false;
   } else if (!validemail.test(email1)) {
-    email.style.border = "3px solid red";
+    email.style.border = "2px solid red";
     email_live_box.style.display = "block";
     email_live_box.textContent = "Enter valid Email";
     return false;
@@ -103,12 +103,12 @@ function validnumber() {
   const validphone = /^\d{10}$/;
 
   if (phone1 == "") {
-    phone.style.border = "3px solid red";
+    phone.style.border = "2px solid red";
     phone_live_box.style.display = "block";
     phone_live_box.textContent = "Phone Required";
     return false;
   } else if (!validphone.test(phone1)) {
-    phone.style.border = "3px solid red";
+    phone.style.border = "2px solid red";
     phone_live_box.style.display = "block";
     phone_live_box.textContent = "Enter valid Number";
     return false;
@@ -123,7 +123,7 @@ function validcategory(){
     const category1=category.value.trim();
 
     if(category1==""){
-        category.style.border="3px solid red";
+        category.style.border="2px solid red";
         category_live_box.style.display="block";
         category_live_box.textContent="Please select category";
         return false;
@@ -139,13 +139,13 @@ function validdescription(){
 const description1=description.value.trim();
 
 if(description1==""){
-    description.style.border="3px solid red";
+    description.style.border="2px solid red";
     description_live_box.style.display="block";
     description_live_box.textContent="Description Required";
     return false;
 }
 else if(description1.length>400){
-     description.style.border="3px solid red";
+     description.style.border="2px solid red";
     description_live_box.style.display="block";
     description_live_box.textContent="400 words Limit";
     return false;
@@ -162,13 +162,13 @@ function validlocation(){
     const validlocation=/^[A-Za-z0-9\s,./-]{3,25}$/;
 
     if(location1==""){
-        location4.style.border="3px solid red";
+        location4.style.border="2px solid red";
         location_live_box.style.display="block";
         location_live_box.textContent="Enter Location";
         return false;
     }
     else if(!validlocation.test(location1)){
-        location4.style.border="3px solid red";
+        location4.style.border="2px solid red";
         location_live_box.style.display="block";
         location_live_box.textContent="Invalid Location";
         return false;
@@ -183,7 +183,7 @@ function validlocation(){
 function validupload(){
 
     if(upload.files.length==0){
-   upload.style.border="3px solid red";
+   upload.style.border="2px solid red";
    upload_live_box.style.display="block";
    upload_live_box.textContent="Upload Complaint Image";
    return false;
@@ -197,7 +197,7 @@ function validupload(){
 
 function validdate(){
     if(date.value==""){
-        date.style.border="3px solid red";
+        date.style.border="2px solid red";
         date_live_box.style.display="block";
         date_live_box.textContent="Select Complaint Date";
         return false;
