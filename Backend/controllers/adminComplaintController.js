@@ -44,4 +44,31 @@ const getsingleComplaint= async (req,res)=>{
     })
     }
 }
-module.exports={getallComplaints,getsingleComplaint}
+
+
+const updatecomplaintStatus= async (req,res)=>{
+    try{
+ const {complaintId}=req.params;
+ const {status}=req.body;
+ const updatedComplaint= await complaintModel.findOneAndUpdate({complaintId},{status},{new:true});
+ 
+ if(!updatedComplaint){
+    return res.status(404).json({
+        message:"Complaint Not Found"
+    })
+ }
+ return res.status(200).json({
+    message:"Complaint Updated Successfully",
+    updateComplaint:updatedComplaint
+ })
+    }
+    catch(error){
+return res.status(500).json({
+    message:"Internal Server Error"
+})
+    }
+}
+
+
+
+module.exports={getallComplaints,getsingleComplaint,updatecomplaintStatus}
