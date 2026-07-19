@@ -99,7 +99,7 @@ function validpassword() {
   
   if(response.ok){
  localStorage.setItem("token", data.token);
- alert(data.message);
+ 
  window.location.href="admin-page.html";
   }
   else{
