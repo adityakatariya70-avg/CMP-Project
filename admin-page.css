@@ -291,6 +291,7 @@ tr:hover {
 
 #complaint-details {
   display: none;
+  flex-direction: column;
   width: 80%;
   margin: 50px auto;
   background: white;

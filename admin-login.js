@@ -74,33 +74,37 @@ function validpassword() {
   }
 }
 
-function check() {
-  const found = data.find(function (c) {
-    return c.email == email.value.trim() && c.password == password.value.trim();
+
+
+ async function success() {
+
+  if (!validemail() || !validpassword() ) {
+    alert("Please Enter Valid Details");
+    return;
+  }
+
+  const enteredData={
+    email: email.value.trim(),
+    password: password.value.trim()
+  };
+
+  const response = await fetch("http://localhost:5000/api/admin/login",{
+    method:"POST",
+    headers:{
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(enteredData)
   });
-  if (found) {
-    return true;
-  } else {
-    return false;
+  const data = await response.json();
+  
+  if(response.ok){
+ localStorage.setItem("token", data.token);
+ alert(data.message);
+ window.location.href="admin-page.html";
+  }
+  else{
+ alert(data.message);
   }
 }
 
-function success() {
-  if (validemail() && validpassword() && check() == true) {
- 
-       window.location.href = "admin-page.html";
-  } else {
-    alert("Not found!!");
-  }
-}
 
-const data = [
-  {
-    email: "adityakatariya70@gmail.com",
-    password: "aditya@78286",
-  },
-  {
-    email: "deepakkatariya29@gmail.com",
-    password: "7828604020",
-  },
-];

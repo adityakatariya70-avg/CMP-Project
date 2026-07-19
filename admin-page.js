@@ -1,5 +1,4 @@
 
-
 const logout=document.getElementById("logout");
 const tablecontrols = document.getElementById("table-controls");
 const searchbox = document.getElementById("search-box-main");
@@ -14,11 +13,12 @@ searchbox.addEventListener("input", search_complaint);
 filterbox.addEventListener("change", filter_complaint);
 logout.addEventListener("click",logout_page);
 
+const token = localStorage.getItem("token");
+console.log(token);
 
-  
-function logout_page(){
- window.location.replace("admin-login.html"); 
- 
+if(!token){
+  alert("Please Login First");
+  window.location.replace("admin-login.html");
 }
 
 function filter_complaint() {
