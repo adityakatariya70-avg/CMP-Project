@@ -123,41 +123,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <div class="detail-item">
             <label>Complaint ID</label>
-            <p>CMP001</p>
+            <p id="complaint-id"></p>
         </div>
 
         <div class="detail-item">
             <label>Citizen Name</label>
-            <p>Aditya Katariya</p>
+            <p id="complaint-name"></p>
         </div>
 
         <div class="detail-item">
             <label>Email</label>
-            <p>aditya@gmail.com</p>
+            <p id="complaint-email"></p>
         </div>
 
         <div class="detail-item">
             <label>Phone Number</label>
-            <p>9876543210</p>
+            <p id="complaint-phone-number"></p>
         </div>
 
         <div class="detail-item">
             <label>Category</label>
-            <p>Water Supply</p>
+            <p id="complaint-category"></p>
         </div>
 
         <div class="detail-item">
             <label>Location</label>
-            <p>Indore, Madhya Pradesh</p>
+            <p id="complaint-location"></p>
         </div>
 
         <div class="detail-item">
             <label>Date Submitted</label>
-            <p>22/06/2026</p>
+            <p id="complaint-date"></p>
         </div>
          <div class="detail-item">
             <label>Complaint Image</label>
-            <p><a href="#">View Uploaded Image</a></p>
+            <p id="complaint-image"><a href="#">View Uploaded Image</a></p>
         </div>
 
     </div>
@@ -166,10 +166,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <h3>Description</h3>
 
-        <p>
-            Water leakage near the main road causing
-            continuous water wastage and inconvenience
-            to local residents.
+        <p id="complaint-description">
+           
         </p>
 
     </div>
@@ -178,14 +176,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <label id="txt12">Current Status</label>
 
-        <select>
+        <select id="update-status">
             <option>Pending</option>
             <option>In Progress</option>
             <option>Resolved</option>
             <option>Rejected</option>
         </select>
 
-        <button>Update Status</button>
+        <button id="update-status-button">Update Status</button>
 
     </div>
 
@@ -208,6 +206,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </h5></div>
 <div class="footer-tagline">© 2026 Complaint Hub. All Rights Reserved.</div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 </body>
 <script src="admin-page.js"></script>
+
 </html>

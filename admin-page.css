@@ -78,7 +78,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height:1350px;
+  height:fit-content;
 }
 
 .statistics-section {
