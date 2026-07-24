@@ -12,7 +12,7 @@ const category = document.getElementById("category");
 const description = document.getElementById("description");
 const location4 = document.getElementById("location");
 const upload = document.getElementById("upload");
-const date = document.getElementById("date");
+
 const submit = document.getElementById("submit-btn");
 const success = document.getElementById("success-message");
 const uniqueid = document.getElementById("complaint-id");
@@ -25,7 +25,7 @@ const category_live_box = document.getElementById("category-live-box");
 const description_live_box = document.getElementById("description-live-box");
 const location_live_box = document.getElementById("location-live-box");
 const upload_live_box = document.getElementById("upload-live-box");
-const date_live_box = document.getElementById("date-live-box");
+
 
 
 name.addEventListener("input", validname);
@@ -35,7 +35,6 @@ description.addEventListener("input",validdescription);
 location4.addEventListener("input",validlocation);
 category.addEventListener("change",validcategory);
 upload.addEventListener("change", validupload);
-date.addEventListener("change",validdate);
 submit.addEventListener("click",submitform);
 
 
@@ -51,8 +50,6 @@ function resetform(){
   description.style.border="";
   location4.style.border="";
   upload.style.border="";
-  date.style.border="";
-
 }
 
 
@@ -195,22 +192,9 @@ function validupload(){
     }
 }
 
-function validdate(){
-    if(date.value==""){
-        date.style.border="2px solid red";
-        date_live_box.style.display="block";
-        date_live_box.textContent="Select Complaint Date";
-        return false;
-    }
-    else{
-         date.style.border="3px solid green";
-        date_live_box.style.display="none";
-    return true;
-    }
-}
 
-function submitform(e){
-    const Complaintid= "CMP"+ Math.floor(Math.random()*10000);
+ async function submitform(e){
+   
  e.preventDefault();
 
 if(
@@ -220,18 +204,34 @@ if(
   validcategory()&&
   validdescription() &&
   validlocation()&&
-  validupload()&&
-  validdate() 
+  validupload()
 ){  
 
   
+    const formData = new FormData();
+    formData.append("name", name.value.trim());
+    formData.append("email", email.value.trim());
+    formData.append("mobile",phone.value.trim());
+    formData.append("category", category.value.trim());
+    formData.append("description", description.value.trim());
+    formData.append("location", location4.value.trim());
+    formData.append("image",upload.files[0]);
+
+    const response= await fetch("http://localhost:5000/api/complaint/register",
+  {
+    method:"POST",
+    body:formData,
+  });
+const data = await response.json();
+   if(response.ok){
     success.style.display="block";
     uniqueid.style.display="block";
-    uniqueid.textContent="Your Complaint ID : " + Complaintid;
-    cross.style.display="block";
-    
-  
+    uniqueid.textContent="Your Complaint ID : "+ data.complaintId;
     resetform();
+   }
+   else{
+    alert(data.message);
+   }
     
 }
 
@@ -242,4 +242,3 @@ cross.addEventListener("click",function(){
 
 })
 }
-

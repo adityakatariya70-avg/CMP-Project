@@ -59,25 +59,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="status-grid">
 
         <div class="label">Complaint ID</div>
-        <div class="value">CMP1024</div>
+        <div class="value" id="track-complaintId"></div>
 
         <div class="label">Category</div>
-        <div class="value">Road & Infrastructure</div>
+        <div class="value" id="track-category"></div>
 
         <div class="label">Department</div>
-        <div class="value">Municipal Corporation</div>
+        <div class="value" id="track-department"></div>
 
         <div class="label">Status</div>
-        <div class="value status-badge">🔄 In Progress</div>
+        <div class="value status-badge" id="track-status"></div>
 
         <div class="label">Registered Date</div>
-        <div class="value">20 June 2026</div>
+        <div class="value" id="track-register-date"></div>
 
         <div class="label">Last Updated</div>
-        <div class="value">22 June 2026</div>
+        <div class="value" id="track-update-date"></div>
 
         <div class="label">Expected Resolution</div>
-        <div class="value">25 June 2026</div>
+        <div class="value" id="track-expected-date"></div>
 
     </div>
 
@@ -88,35 +88,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     <div class="timeline">
 
-        <div class="step completed">
+        <div class="step" id="submitted-step">
             <div class="circle">✓</div>
             <p>Submitted</p>
         </div>
 
-        <div class="line active"></div>
+        <div class="line" id="submitted-line"></div>
 
-        <div class="step completed">
+        <div class="step" id="received-step">
             <div class="circle">✓</div>
             <p>Received</p>
         </div>
 
-        <div class="line active"></div>
+        <div class="line" id="received-line"></div>
 
-        <div class="step completed">
+        <div class="step" id="review-step">
             <div class="circle">✓</div>
             <p>Review</p>
         </div>
 
-        <div class="line active"></div>
+        <div class="line" id="review-line"></div>
 
-        <div class="step current">
+        <div class="step" id="progress-step">
             <div class="circle">⟳</div>
             <p>In Progress</p>
         </div>
 
-        <div class="line"></div>
+        <div class="line" id="progress-line"></div>
 
-        <div class="step pending">
+        <div class="step" id="resolved-step">
             <div class="circle">5</div>
             <p>Resolved</p>
         </div>

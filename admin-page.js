@@ -5,40 +5,43 @@ const filterbox = document.getElementById("filter-box");
 const complaintable = document.getElementById("complaint-table");
 const tablebody = document.getElementById("table-body");
 const rows = document.querySelectorAll("#table-body tr");
-const complaintDetails=document.getElementById("complaint-details");
+const complaintDetails = document.getElementById("complaint-details");
 
 const totalnumber = document.getElementById("total-number");
 const pendingnumber = document.getElementById("pending-number");
 const progressnumber = document.getElementById("progress-number");
 const resolvednumber = document.getElementById("resolved-number");
 
-const complaintId=document.getElementById("complaintId");
-const name=document.getElementById("name");
-const category=document.getElementById("category");
-const date=document.getElementById("date");
-const status=document.getElementById("status");
-const viewbtn=document.getElementsByClassName("view-btn");
+const complaintId = document.getElementById("complaintId");
+const name = document.getElementById("name");
+const category = document.getElementById("category");
+const date = document.getElementById("date");
+const status = document.getElementById("status");
+const viewbtn = document.getElementsByClassName("view-btn");
 
-const responsecomplaintId=document.getElementById("complaint-id");
-const responsecomplaintname=document.getElementById("complaint-name");
-const responsecomplaintemail=document.getElementById("complaint-email");
-const responsecomplaintphone=document.getElementById("complaint-phone-number");
-const responsecomplaintcategory=document.getElementById("complaint-category");
-const responsecomplaintlocation=document.getElementById("complaint-location");
-const responsecomplaintdate=document.getElementById("complaint-date");
-const responsecomplaintimage=document.getElementById("complaint-image");
-const responsecomplaintdescription=document.getElementById("complaint-description");
-const updateStatus=document.getElementById("update-status");
-const updateButton=document.getElementById("update-status-button");
+const responsecomplaintId = document.getElementById("complaint-id");
+const responsecomplaintname = document.getElementById("complaint-name");
+const responsecomplaintemail = document.getElementById("complaint-email");
+const responsecomplaintphone = document.getElementById(
+  "complaint-phone-number",
+);
+const responsecomplaintcategory = document.getElementById("complaint-category");
+const responsecomplaintlocation = document.getElementById("complaint-location");
+const responsecomplaintdate = document.getElementById("complaint-date");
+const responsecomplaintimage = document.getElementById("complaint-image");
+const responsecomplaintdescription = document.getElementById(
+  "complaint-description",
+);
+const updateStatus = document.getElementById("update-status");
+const updateButton = document.getElementById("update-status-button");
 
 searchbox.addEventListener("input", search_complaint);
 filterbox.addEventListener("change", filter_complaint);
 
-
 function filter_complaint() {
   const value = filterbox.value;
-  
-const rows = document.querySelectorAll("#table-body tr");
+
+  const rows = document.querySelectorAll("#table-body tr");
   rows.forEach(function (row) {
     const status = row.cells[4].textContent;
 
@@ -65,7 +68,6 @@ function search_complaint() {
     }
   });
 }
-
 
 const token = localStorage.getItem("token");
 console.log(token);
@@ -94,21 +96,20 @@ async function DashboardStats() {
 }
 DashboardStats();
 
-async function Table(){
+async function Table() {
+  const response = await fetch("http://localhost:5000/api/admin/complaints", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const tabledata = await response.json();
 
-const response = await fetch("http://localhost:5000/api/admin/complaints",{
-  method:"GET",
-  headers:{
-    Authorization: `Bearer ${token}`,
-  },
-});
-const tabledata= await response.json();
+  const Complaints = tabledata.Complaints;
+  tablebody.innerHTML = "";
 
-const Complaints =tabledata.Complaints;
-tablebody.innerHTML="";
-
-Complaints.forEach((Complaint)=>{
-  tablebody.innerHTML += `
+  Complaints.forEach((Complaint) => {
+    tablebody.innerHTML += `
   <tr>
 <td>${Complaint.complaintId}</td>
 <td>${Complaint.name}</td>
@@ -117,57 +118,54 @@ Complaints.forEach((Complaint)=>{
 <td>${Complaint.status}</td>
   <td><button class="view-btn" data-id="${Complaint.complaintId}">   <i class="fa-solid fa-eye"></i> view</button></td>
   </tr>
-  `
-})
-
+  `;
+  });
 }
 Table();
-let currentComplaintId="";
+let currentComplaintId = "";
 
 tablebody.addEventListener("click", getComplaintDetails);
 
-async function getComplaintDetails(event){
+async function getComplaintDetails(event) {
+  const clickedButton = event.target.closest(".view-btn");
 
-const clickedButton = event.target.closest(".view-btn");
-
-if(!clickedButton){
-  return 
-}
-
-const selectedComplaintid = clickedButton.dataset.id;
-currentComplaintId=selectedComplaintid;
-
-const response = await fetch(
-  `http://localhost:5000/api/admin/complaints/${selectedComplaintid}`,
-  {
-    method:"GET",
-    headers:{
-      Authorization:`Bearer ${token}`
-    },
+  if (!clickedButton) {
+    return;
   }
-);
-const data = await response.json();
-console.log(data);
-if(response.ok){
-  complaintDetails.style.display="block";
-  responsecomplaintId.textContent=data.complaint.complaintId;
-  responsecomplaintname.textContent=data.complaint.name;
-  responsecomplaintemail.textContent=data.complaint.email;
-  responsecomplaintphone.textContent=data.complaint.mobile;
-  responsecomplaintcategory.textContent=data.complaint.category;
-  responsecomplaintlocation.textContent=data.complaint.location;
-  responsecomplaintdate.textContent= new Date(data.complaint.createdAt).toLocaleDateString();
-  responsecomplaintdescription.textContent=data.complaint.description;
-updateStatus.value = data.complaint.status;
 
+  const selectedComplaintid = clickedButton.dataset.id;
+  currentComplaintId = selectedComplaintid;
+
+  const response = await fetch(
+    `http://localhost:5000/api/admin/complaints/${selectedComplaintid}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+  const data = await response.json();
+  console.log(data);
+  if (response.ok) {
+    complaintDetails.style.display = "block";
+    responsecomplaintId.textContent = data.complaint.complaintId;
+    responsecomplaintname.textContent = data.complaint.name;
+    responsecomplaintemail.textContent = data.complaint.email;
+    responsecomplaintphone.textContent = data.complaint.mobile;
+    responsecomplaintcategory.textContent = data.complaint.category;
+    responsecomplaintlocation.textContent = data.complaint.location;
+    responsecomplaintdate.textContent = new Date(
+      data.complaint.createdAt,
+    ).toLocaleDateString();
+    responsecomplaintdescription.textContent = data.complaint.description;
+    updateStatus.value = data.complaint.status;
+  }
 }
 
-}
-
- updateButton.addEventListener("click", updateStatusfn);
+updateButton.addEventListener("click", updateStatusfn);
 
 async function updateStatusfn() {
-
   const selectedId = currentComplaintId;
   const selectedStatus = updateStatus.value;
 
@@ -177,46 +175,65 @@ async function updateStatusfn() {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        status: selectedStatus
+        status: selectedStatus,
       }),
-    }
+    },
   );
 
   const data = await response.json();
 
   if (response.ok) {
-
     Swal.fire({
       icon: "success",
       title: "Status Updated!",
       text: data.message,
       timer: 2000,
-      showConfirmButton: false
+      showConfirmButton: false,
     });
 
     complaintDetails.style.display = "none";
 
     DashboardStats();
     Table();
-
   } else {
-
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: data.message
+      text: data.message,
     });
-
   }
 }
 
-logoutbtn.addEventListener("click", logout)
+logoutbtn.addEventListener("click", logout);
 
-async function logout(event){
+function logout(event) {
   event.preventDefault();
-localStorage.removeItem("token");
-window.location.href="admin-login.html";
+
+  Swal.fire({
+    title: "Logout?",
+    text: "Are you sure you want to logout?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, Logout",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("token");
+
+      Swal.fire({
+        icon: "success",
+        title: "Logged Out!",
+        text: "You have been logged out successfully.",
+        timer: 1500,
+        showConfirmButton: false,
+      }).then(() => {
+        window.location.replace("admin-login.html");
+      });
+    }
+  });
 }

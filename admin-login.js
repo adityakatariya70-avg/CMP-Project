@@ -3,9 +3,7 @@ const navLinks = document.getElementById("nav-links");
 
 menuBtn.onclick = function () {
   navLinks.classList.toggle("active");
-
 };
-
 
 const loginsection = document.getElementById("login-section");
 const logincard = document.getElementById("login-card");
@@ -74,37 +72,39 @@ function validpassword() {
   }
 }
 
-
-
- async function success() {
-
-  if (!validemail() || !validpassword() ) {
-    alert("Please Enter Valid Details");
+async function success() {
+  if (!validemail() || !validpassword()) {
     return;
   }
 
-  const enteredData={
+  const enteredData = {
     email: email.value.trim(),
-    password: password.value.trim()
+    password: password.value.trim(),
   };
 
-  const response = await fetch("http://localhost:5000/api/admin/login",{
-    method:"POST",
-    headers:{
+  const response = await fetch("http://localhost:5000/api/admin/login", {
+    method: "POST",
+    headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(enteredData)
+    body: JSON.stringify(enteredData),
   });
   const data = await response.json();
-  
-  if(response.ok){
- localStorage.setItem("token", data.token);
- 
- window.location.href="admin-page.html";
-  }
-  else{
- alert(data.message);
+
+  if (response.ok) {
+    localStorage.setItem("token", data.token);
+    Swal.fire({
+      icon: "success",
+      title: "Login Successful!",
+      text: "Welcome Admin",
+      timer: 1800,
+      showConfirmButton: false,
+    }).then(() => {
+      email.value = "";
+      password.value = "";
+      window.location.href = "admin-page.html";
+    });
+  } else {
+    alert(data.message);
   }
 }
-
-

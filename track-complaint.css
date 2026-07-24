@@ -76,7 +76,7 @@
   justify-content: end;
   align-items: center;
 }
-body{
+body {
   background-color: #fff8dc;
 }
 .live-box {
@@ -92,7 +92,7 @@ body{
   font-weight: 500;
 }
 
-.label{
+.label {
   margin-left: 10px;
 }
 #failedlivebox {
@@ -294,12 +294,6 @@ body{
   flex-wrap: wrap;
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .circle {
   width: 55px;
   height: 55px;
@@ -311,33 +305,78 @@ body{
   color: white;
 }
 
-.completed .circle {
+.timeline-section {
+  display: none;
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.timeline-section h2 {
+  color: #8b0000;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+}
+
+.circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.step.completed .circle {
   background: #28a745;
+  color: white;
 }
 
-.current .circle {
-  background: #007bff;
+.step.current .circle {
+  background: #0d6efd;
+  color: white;
 }
 
-.pending .circle {
-  background: #bdbdbd;
+.step p {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
 }
 
 .line {
   width: 80px;
   height: 4px;
   background: #d9d9d9;
-  margin: 0 10px;
+  margin: 0 8px;
+  transition: 0.3s;
 }
 
-.line.active {
+.line.active-line {
   background: #28a745;
-}
-
-.step p {
-  margin-top: 10px;
-  font-weight: 600;
-  color: #333;
 }
 
 @media screen and (max-width: 768px) {
@@ -465,7 +504,6 @@ body{
     grid-template-columns: 2fr 2fr;
     gap: 10px;
   }
-  
 
   .timeline-section {
     width: 98%;
@@ -512,5 +550,35 @@ body{
   }
   .footer {
     height: auto;
+  }
+  .timeline-section {
+    width: 95%;
+    padding: 20px 10px;
+  }
+
+  .timeline {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+
+  .step {
+    min-width: 65px;
+  }
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .step p {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .line {
+    width: 35px;
+    margin: 0 4px;
   }
 }

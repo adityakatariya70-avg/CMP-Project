@@ -11,10 +11,9 @@ const submit = document.getElementById("submit-btn");
 const complaintstatus = document.getElementById("complaint-status");
 const timelinestatus = document.getElementById("timeline-status");
 const herosection = document.getElementById("hero-section");
-const failedlivebox=document.getElementById("failedlivebox");
-const failedbtn=document.getElementById("failed-btn")
-const trackcard=document.getElementById("track-card");
-
+const failedlivebox = document.getElementById("failedlivebox");
+const failedbtn = document.getElementById("failed-btn");
+const trackcard = document.getElementById("track-card");
 
 const namelivebox = document.getElementById("id-live-box");
 const numberlivebox = document.getElementById("no-live-box");
@@ -22,19 +21,35 @@ const numberlivebox = document.getElementById("no-live-box");
 complaintidcolumn.addEventListener("input", validid);
 numbercolumn.addEventListener("input", validnumber);
 submit.addEventListener("click", trackbtn);
-failedbtn.addEventListener("click",resetform);
+failedbtn.addEventListener("click", resetform);
 
+const trackcomplaintId = document.getElementById("track-complaintId");
+const trackcategory = document.getElementById("track-category");
+const trackdepartment = document.getElementById("track-department");
+const trackstatus = document.getElementById("track-status");
+const trackregisterdate = document.getElementById("track-register-date");
+const trackupdatedate = document.getElementById("track-update-date");
+const trackexpecteddate = document.getElementById("track-expected-date");
 
-function resetform(){
-  
-  complaintidcolumn.value="";
-  numbercolumn.value="";
-  complaintidcolumn.style.border="";
-  numbercolumn.style.border="";
-  failedlivebox.style.display="none";
-    trackcard.style.display="block";
+const submittedStep = document.getElementById("submitted-step");
+const receivedStep = document.getElementById("received-step");
+const reviewStep = document.getElementById("review-step");
+const progressStep = document.getElementById("progress-step");
+const resolvedStep = document.getElementById("resolved-step");
+
+const submittedLine = document.getElementById("submitted-line");
+const receivedLine = document.getElementById("received-line");
+const reviewLine = document.getElementById("review-line");
+const progressLine = document.getElementById("progress-line");
+
+function resetform() {
+  complaintidcolumn.value = "";
+  numbercolumn.value = "";
+  complaintidcolumn.style.border = "";
+  numbercolumn.style.border = "";
+  failedlivebox.style.display = "none";
+  trackcard.style.display = "block";
 }
-
 
 function validid() {
   const complaintidcolumn1 = complaintidcolumn.value.trim();
@@ -78,48 +93,164 @@ function validnumber() {
   }
 }
 
-function validfound() {
-  const new1 = complaintidcolumn.value.trim();
-  const new2 = numbercolumn.value.trim();
+function updateTimeline(status){
 
-const foundcomplaint= complaint.find(function(c){
-  return c.id==new1 && c.number==new2;
-});
-if(foundcomplaint){
-  return true;
-}
-else{
-   
-  }
+    const steps = [
+        submittedStep,
+        receivedStep,
+        reviewStep,
+        progressStep,
+        resolvedStep
+    ];
 
-}
+    const lines = [
+        submittedLine,
+        receivedLine,
+        reviewLine,
+        progressLine
+    ];
 
-function trackbtn() {
-  if (validid() && validnumber() && validfound()) {
-      
-     complaintstatus.style.display="block";
-     timelinestatus.style.display="block";
-     herosection.style.display="none";
-  }
-  else{
- failedlivebox.style.display="block";
-  trackcard.style.display="none";
+    steps.forEach(step=>{
+        step.classList.remove("completed");
+        step.classList.remove("current");
+    });
+
+    lines.forEach(line=>{
+        line.classList.remove("active-line");
+    });
+
  
-  }
-  
-}
 
-const complaint = [
-  {
-    id: "CMP1234",
-    number: "7828604020",
-  },
-  {
-    id: "CMP5656",
-    number: "7000380652",
-  },
-  {
-    id: "CMP4567",
-    number: "9926931667",
+    switch(status){
+
+        case "Pending":
+
+            submittedStep.classList.add("completed");
+            receivedStep.classList.add("current");
+            submittedLine.classList.add("active-line");
+
+            break;
+
+
+        case "In Progress":
+
+            submittedStep.classList.add("completed");
+            receivedStep.classList.add("completed");
+            reviewStep.classList.add("completed");
+            progressStep.classList.add("current");
+
+            submittedLine.classList.add("active-line");
+            receivedLine.classList.add("active-line");
+            reviewLine.classList.add("active-line");
+
+            break;
+
+
+        case "Resolved":
+
+            submittedStep.classList.add("completed");
+            receivedStep.classList.add("completed");
+            reviewStep.classList.add("completed");
+            progressStep.classList.add("completed");
+            resolvedStep.classList.add("completed");
+
+            submittedLine.classList.add("active-line");
+            receivedLine.classList.add("active-line");
+            reviewLine.classList.add("active-line");
+            progressLine.classList.add("active-line");
+
+            break;
+        case "Rejected":
+            submittedStep.classList.add("completed");
+            receivedStep.classList.add("completed");
+            reviewStep.classList.add("current");
+
+            submittedLine.classList.add("active-line");
+            receivedLine.classList.add("active-line");
+
+         break;
+          }
+}
+async function trackbtn() {
+  if (!validid() || !validnumber()) {
+    return;
   }
-];
+
+  const enteredData = {
+    complaintId: complaintidcolumn.value.trim(),
+    mobile: numbercolumn.value.trim(),
+  };
+  const response = await fetch("http://localhost:5000/api/complaint/track", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(enteredData),
+  });
+
+  const data = await response.json();
+  console.log(data);
+
+  if (response.ok) {
+    const complaint = data.complaint;
+    complaintstatus.style.display = "block";
+    timelinestatus.style.display = "block";
+    herosection.style.display = "none";
+
+    trackcomplaintId.textContent = data.complaint.complaintId;
+    trackcategory.textContent = data.complaint.category;
+    let department = "";
+    switch (complaint.category) {
+      case "Electricity":
+        department = "Electricity Department";
+        break;
+      case "Water Supply":
+        department = "Water Supply Department";
+        break;
+      case "Road & Infrastructure":
+        department = "Muncipal Corporation";
+        break;
+      case "Sanitation":
+        department = "Sanitation Department";
+        break;
+      case "Street Light":
+        department = "Electricity Department";
+        break;
+      case "Public Transport":
+        department = "Transport Department";
+        break;
+      case "Government Office":
+        department = "Government Department";
+        break;
+      case "Other":
+        department = "Government Services Department";
+        break;
+
+      default:
+        department = "General Department";
+    }
+
+    trackdepartment.textContent=department;
+    trackstatus.textContent = data.complaint.status;
+    trackregisterdate.textContent = new Date(complaint.createdAt,).toLocaleDateString();
+    trackupdatedate.textContent = new Date(complaint.updatedAt,).toLocaleDateString();
+
+    if(complaint.status=="Resolved"){
+      trackexpecteddate.textContent="Complaint Resolved";
+    }
+    else if(complaint.status=="In Progress"){
+      trackexpecteddate.textContent="Under Process";
+    }
+    else if(complaint.status=="Pending"){
+      trackexpecteddate.textContent="Under Verification";
+    }
+    else{
+      trackexpecteddate.textContent="Complaint Rejected!!";
+    }
+updateTimeline(complaint.status);
+    
+  } else {
+    failedlivebox.style.display = "block";
+    trackcard.style.display = "none";
+  }
+}
