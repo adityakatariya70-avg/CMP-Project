@@ -34,6 +34,10 @@ const responsecomplaintdescription = document.getElementById(
 );
 const updateStatus = document.getElementById("update-status");
 const updateButton = document.getElementById("update-status-button");
+const complaintImageLink = document.getElementById("complaint-image");
+const imageModal = document.getElementById("imageModal");
+const previewImage = document.getElementById("previewImage");
+const closeImage = document.getElementById("closeImage");
 
 searchbox.addEventListener("input", search_complaint);
 filterbox.addEventListener("change", filter_complaint);
@@ -132,7 +136,17 @@ async function getComplaintDetails(event) {
   if (!clickedButton) {
     return;
   }
+ Swal.fire({
+    title: "Loading Complaint...",
+    text: "Please wait",
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
 
+  await new Promise(resolve => setTimeout(resolve, 1500));
   const selectedComplaintid = clickedButton.dataset.id;
   currentComplaintId = selectedComplaintid;
 
@@ -146,6 +160,7 @@ async function getComplaintDetails(event) {
     },
   );
   const data = await response.json();
+  Swal.close();
   console.log(data);
   if (response.ok) {
     complaintDetails.style.display = "block";
@@ -155,6 +170,19 @@ async function getComplaintDetails(event) {
     responsecomplaintphone.textContent = data.complaint.mobile;
     responsecomplaintcategory.textContent = data.complaint.category;
     responsecomplaintlocation.textContent = data.complaint.location;
+    complaintImageLink.onclick = function (e) {
+      e.preventDefault();
+      previewImage.src = data.complaint.image;
+      imageModal.style.display = "flex";
+    };
+    closeImage.onclick = function () {
+      imageModal.style.display = "none";
+    };
+    imageModal.onclick = function (e) {
+      if (e.target === imageModal) {
+        imageModal.style.display = "none";
+      }
+    };
     responsecomplaintdate.textContent = new Date(
       data.complaint.createdAt,
     ).toLocaleDateString();

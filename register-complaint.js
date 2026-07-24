@@ -224,9 +224,16 @@ if(
   });
 const data = await response.json();
    if(response.ok){
+   Swal.fire({
+    icon: "success",
+    title: "Complaint Submitted Successfully!!",
+    timer: 1500,
+    showConfirmButton: false
+});
     success.style.display="block";
     uniqueid.style.display="block";
     uniqueid.textContent="Your Complaint ID : "+ data.complaintId;
+    cross.style.display="block";
     resetform();
    }
    else{

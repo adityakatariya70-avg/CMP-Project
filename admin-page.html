@@ -81,7 +81,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <select id="filter-box">
                 <option value="All">All Complaints</option>
                 <option value="Pending">Pending</option>
-                <option value="Progress">In Progress</option>
+                <option value="In Progress">In Progress</option>
                 <option value="Resolved">Resolved</option>
 
             </select>
@@ -155,11 +155,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <label>Date Submitted</label>
             <p id="complaint-date"></p>
         </div>
-         <div class="detail-item">
-            <label>Complaint Image</label>
-            <p id="complaint-image"><a href="#">View Uploaded Image</a></p>
-        </div>
+       
+<div class="detail-item">
+    <label>Complaint Image</label>
 
+    <a href="#" id="complaint-image">
+        View Complaint Image
+    </a>
+</div>
     </div>
 
     <div class="description-box">
@@ -190,6 +193,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </section>
 </div>
 
+<div id="imageModal" class="image-modal">
+    <span id="closeImage">&times;</span>
+
+    <img id="previewImage" src="" alt="Complaint Image">
+</div>
   <div class="footer">
       <div class="footer-headline"><h4>Complaint Hub</h4>
     <h6>Your Voice, Our Responsibility</h6></div>
