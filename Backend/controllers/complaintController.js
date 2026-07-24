@@ -2,8 +2,8 @@ const Complaint = require("../models/complaintModel");
 
 const registerComplaint= async (req, res)=>{
     try{
- const { name,email,mobile,category,description,location,image}=req.body;
-   if(!name||!email||!mobile||!category||!description||!location)
+ const { name,email,mobile,category,description,location}=req.body;
+   if(!name||!email||!mobile||!category||!description||!location||!req.file)
     return res.status(400).json({
 message:"All fields are Required"
 })
@@ -25,7 +25,7 @@ const newComplaint = new Complaint({
     category,
     description,
     location,
-    image,
+    image:req.file.path,
    
 });
 
