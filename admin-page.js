@@ -163,7 +163,8 @@ async function getComplaintDetails(event) {
   Swal.close();
   console.log(data);
   if (response.ok) {
-    complaintDetails.style.display = "block";
+   
+  complaintDetails.style.display = "block";
     responsecomplaintId.textContent = data.complaint.complaintId;
     responsecomplaintname.textContent = data.complaint.name;
     responsecomplaintemail.textContent = data.complaint.email;
@@ -188,6 +189,7 @@ async function getComplaintDetails(event) {
     ).toLocaleDateString();
     responsecomplaintdescription.textContent = data.complaint.description;
     updateStatus.value = data.complaint.status;
+    
   }
 }
 

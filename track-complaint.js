@@ -180,6 +180,15 @@ async function trackbtn() {
     complaintId: complaintidcolumn.value.trim(),
     mobile: numbercolumn.value.trim(),
   };
+ Swal.fire({
+    title: "Tracking Complaint...",
+    text: "Please wait...",
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    didOpen: () => {
+        Swal.showLoading();
+    }
+});
   const response = await fetch("http://localhost:5000/api/complaint/track", {
     method: "POST",
     headers: {
@@ -188,14 +197,17 @@ async function trackbtn() {
     body: JSON.stringify(enteredData),
   });
 
-  const data = await response.json();
-  console.log(data);
-
+  const data = await response.json(); 
+Swal.close();
   if (response.ok) {
     const complaint = data.complaint;
     complaintstatus.style.display = "block";
     timelinestatus.style.display = "block";
     herosection.style.display = "none";
+ complaintstatus.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
     trackcomplaintId.textContent = data.complaint.complaintId;
     trackcategory.textContent = data.complaint.category;
