@@ -1,0 +1,347 @@
+.header {
+  background-color: #fff8dc;
+  display: flex;
+  background-color: #8b0000;
+  width: 100%;
+  height: 120px;
+}
+
+.navbar {
+  width: 100%;
+  height: 120px;
+  background-color: #8b0000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text {
+  height: 100px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  color: #ffffff;
+}
+#main-text {
+  font-size: 40px;
+}
+#tagline {
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.data {
+  height: 50px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-btn a {
+  background-color: #8b0000;
+  color: #ffffff;
+  font-size: 23px;
+  font-family: sans-serif;
+  border-style: none;
+  text-decoration: none;
+}
+
+.nav-btn a:hover {
+  background-color: #8b0000;
+  color: yellow;
+}
+#home-btn a {
+  color: yellow;
+  border-style: none;
+}
+.admin-logo {
+  width: 60px;
+  height: 60px;
+  background-image: url("admin-logo3.jpg");
+  background-size: cover;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.logo-text {
+  color: white;
+  font-size: 15px;
+  font-family: sans-serif;
+  padding-top: 5px;
+  padding-right: 20px;
+}
+
+.main-section {
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 30px;
+  background-color: #fff8dc;
+}
+.heading {
+  justify-self: center;
+}
+.heading h2 {
+  text-align: center;
+  font-size: 38px;
+  color: darkred;
+  padding-top: 40px;
+}
+.heading p {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.total-contact {
+  justify-self: center;
+  width: 380px;
+  height: 300px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+  border-top: 5px solid red;
+}
+.total-contact:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.stat-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.total-contact h3 {
+  font-size: 22px;
+  color: darkred;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #222;
+}
+
+.total-contact p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.table-section {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-section h2 {
+  color: #8b0000;
+  font-size: 38px;
+}
+.table-section p {
+  font-size: 20px;
+}
+
+.search-box {
+  width: 350px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.table-controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.table-controls input,
+.table-controls select {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.search-box i {
+  color: darkred;
+  font-size: 18px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+table {
+  justify-self: center;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 60%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+tbody tr:hover {
+  background: #f8f8f8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+td:first-child {
+  font-weight: bold;
+  color: darkred;
+}
+
+th {
+  background: darkred;
+  color: white;
+  padding: 15px;
+  padding-left: 50px;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #f8f8f8;
+}
+
+td button {
+  background: darkred;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+td button:hover {
+  background: #a30000;
+}
+
+.contact-details {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 150px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-details h2 {
+  text-align: center;
+  color: darkred;
+  margin-bottom: 30px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.detail-item {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.detail-item label {
+  font-weight: bold;
+  color: darkred;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.detail-message {
+  height: fit-content;
+  margin-top: 20px;
+  justify-self: center;
+  width: 90%;
+  margin-bottom: 20px;
+}
+#msg {
+  font-size: 20px;
+  justify-self: center;
+}
+
+.contact-action-buttons {
+  margin-left: 38%;
+}
+
+.footer {
+  width: 100%;
+  height: 230px;
+}
+.footer-headline {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8b0000;
+  color: #f5f5f5;
+}
+.quick-links {
+  width: 100%;
+  height: 40px;
+  background-color: #8b0000;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
+  font-size: 20px;
+}
+.quick-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.quick-links a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+.footer-contactinfo {
+  background-color: #8b0000;
+  color: white;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-tagline {
+  width: 100%;
+  height: 40px;
+  background-color: #8b0000;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

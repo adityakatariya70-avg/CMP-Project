@@ -1,4 +1,4 @@
-/* NAVBAR */
+
 .header {
   background-color: #fff8dc;
   display: flex;
@@ -17,6 +17,8 @@
 }
 
 .text {
+  height:100px;
+  width:320px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -645,6 +647,4 @@ font-size: 10px;
 .footer{
     height: auto;
 }
-
-
 }

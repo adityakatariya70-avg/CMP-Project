@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Contact Dashboard</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin-contact.css">
+</head>
+
+    <div class="header">
+            <div class="navbar">  
+            <div class="logo"> <img src="complaint-hub-logo.png" alt="Complaint Hub Logo" width="110px" height="110px"></div>
+            <div class="head">
+            <div class="text">
+            <h1 id="main-text"><u>COMPLAINT HUB</u></h1>
+            <p id="tagline">Your Voice, Our Responsibility</p>
+            </div> 
+        </div>
+        
+        <div class="data">
+      <div class="nav-btn"><a href="admin-page.html">Complaint Dashboard</a></div>
+      <div class="nav-btn" id="home-btn"><a href="admin-contact.html">Contact Dashboard</a></div>
+       <div class="nav-btn"><a href="index.html">Home</a></div>
+      <div class="nav-btn" ><a id="logout" href="#">🔐 Logout</a></div>
+      
+        </div>
+       <div class="admin-logo"></div>
+       <span class="logo-text">Admin</span>
+    </div>
+        </div>
+        <div class="main-section">
+      <div class="heading"><h2>Complaint Dashboard</h2>
+      <p>Review, manage, and respond to contact requests.</p></div>
+      <div class="total-contact">
+            <div class="stat-icon">📋</div>
+            <h3>Total Queries</h3>
+            <div id="total-number" class="stat-number">40</div>
+            <p>Total Contact requests received by the system.</p>
+        </div>
+<div class="table-section">
+    <div class="heading2"><h2>Contact Query Table</h2><p>View and manage all registered requests.</p></div>
+    
+<div class="table-controls" id="table-controls">
+    <div class="search-box"> 
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="search-box-main" placeholder="Search by name"></div>
+        
+            <select id="filter-box">
+                <option value="All">All</option>
+                <option value="Newest first">Newest first</option>
+                 <option value="Oldest first">Oldest first</option>
+                <option value="Read">Read</option>
+            </select>
+        </div>
+        <div class="table">
+            <table id="contact-table">
+                <thead>
+                    <tr id="head-row">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="table-row">
+                        <td id="table-name">Aditya katariya</td>
+                        <td id="table-email">adityakatariya70@gmail.com</td>
+                        <td id="table-date">10/07/26</td>
+                        <td id="table-status">new</td>
+                        <td id="table-btn"><button class="view-btn"> <i class="fa-solid fa-eye"></i> View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+
+<div class="contact-details">
+    <h2>Contact Message Details</h2>
+    <div class="contact-detail-box">
+         <div class="details-grid">
+
+        <div class="detail-item">
+            <label>Full Name</label>
+            <p id="contact-name">Aditya katariya</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Email Address</label>
+            <p id="contact-email">adityakatariya70@gmail.com</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Mobile Number</label>
+            <p id="contact-mobile">7828604020</p>
+        </div>
+
+        <div class="detail-item">
+            <label>Date Submitted</label>
+            <p id="contact-date">10/07/26</p>
+        </div>
+
+         
+    </div>
+ <div class="detail-item detail-message">
+            <label id="msg">Message </label>
+            <p id="contact-message"> lorem*8</p>
+        </div>
+   
+
+    </div>
+
+    
+    <div class="contact-action-buttons">
+
+        <button id="mark-btn" class="btn btn-success">
+            <i class="fa-solid fa-check"></i>
+            Mark as Read
+        </button>
+
+        <button id="delete-btn" class="btn btn-danger">
+            <i class="fa-solid fa-trash"></i>
+            Delete Message
+        </button>
+
+    </div>
+    </div>
+</div>
+        </div>
+         <div class="footer">
+      <div class="footer-headline"><h4>Complaint Hub</h4>
+    <h6>Your Voice, Our Responsibility</h6></div>
+    <div class="quick-links">
+        <div class="footerhome vpn"><a href="index.html">Home</a></div>
+        <div class="footerservices vpn"> <a href="services.html">Services</a>  </div>
+        <div class="footertrackcomplaint vpn"><a href="register-complaint.html">Register Complaint</a></h5></div>
+        <div class="footer-contact-details vpn"><a href="track-complaint.html">Track Complaint</a></div>
+         <div class="footer-contact-details vpn"><a href="contact.html">Contact</a></div>
+          <div class="footer-contact-details vpn"><a href="#">Admin Logout</a></div>
+    </div>
+    <div class="footer-contactinfo"><h5>📧 support@complainthub.com </h5>
+     <h5>   📞 +91 9876543210 </h5> <h5> <h5>📍 Indore, MP</h5>
+</h5></div>
+<div class="footer-tagline">© 2026 Complaint Hub. All Rights Reserved.</div>
+    </div>
+</body>
+<script src="admin-contact.js"></script>
+</html>
