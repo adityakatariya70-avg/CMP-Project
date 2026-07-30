@@ -28,8 +28,8 @@ const deleteComplaint = async (req, res) => {
     try {
         const { complaintId } = req.params;
 
-        const complaint = await complaintModel.findByIdAndDelete({
-            complaintId
+        const complaint = await complaintModel.findOneAndDelete({
+            complaintId: complaintId,
         });
 
         if (!complaint) {
@@ -42,8 +42,8 @@ const deleteComplaint = async (req, res) => {
             message: "Complaint Deleted Successfully"
         });
 
-    } catch (err) {
-        console.log(err);
+    } catch (error) {
+        console.log(error);
         res.status(500).json({
             message: "Internal Server Error"
         });
