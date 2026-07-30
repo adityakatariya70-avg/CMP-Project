@@ -296,8 +296,8 @@ tr:hover {
     height: 42px;
     border: none;
     border-radius: 8px;
-    background: #dc3545;
-    color: white;
+    background: white;
+    color: #dc3545;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -307,7 +307,7 @@ tr:hover {
 }
 
 .delete-btn:hover{
-    background: #bb2d3b;
+    background: yellow;
     transform: scale(1.08);
 }
 #complaint-details {
