@@ -38,6 +38,7 @@ const complaintImageLink = document.getElementById("complaint-image");
 const imageModal = document.getElementById("imageModal");
 const previewImage = document.getElementById("previewImage");
 const closeImage = document.getElementById("closeImage");
+const deleteBtn = document.getElementById("delete-btn");
 
 searchbox.addEventListener("input", search_complaint);
 filterbox.addEventListener("change", filter_complaint);
@@ -121,6 +122,11 @@ async function Table() {
 <td>${new Date(Complaint.createdAt).toLocaleDateString()}</td>
 <td>${Complaint.status}</td>
   <td><button class="view-btn" data-id="${Complaint.complaintId}">   <i class="fa-solid fa-eye"></i> view</button></td>
+  <td>
+  <button class="delete-btn" data-id="${Complaint.complaintId}">
+    <i class="fa-solid fa-trash"></i>
+  </button>
+</td>
   </tr>
   `;
   });
@@ -235,6 +241,58 @@ async function updateStatusfn() {
       text: data.message,
     });
   }
+}
+
+tablebody.addEventListener("click", deleteComplaint);
+
+async function deleteComplaint(event){
+  
+  const clickedBtn=event.target.closest(".delete-btn");
+  if(!clickedBtn){
+    return;
+  }
+  const selectedId=clickedBtn.dataset.id;
+  const result = await Swal.fire({
+    title: "Delete Complaint?",
+    text: "This action cannot be undone.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, Delete",
+    cancelButtonText: "Cancel",
+    confirmButtonColor: "#d33"
+  });
+    if (!result.isConfirmed) return;
+console.log("Selected ID:", selectedId);
+const response= await fetch(`http://localhost:5000/api/admin/complaints/${selectedId}`,{
+  method:"DELETE",
+  headers:{
+    Authorization:`Bearer ${token}`,
+  }
+});
+
+const data= await response.json();
+console.log(data);
+if(response.ok){
+  Swal.fire({
+        icon: "success",
+        title: "Deleted!",
+        text: data.message,
+        confirmButtonColor: "#8b0000",
+        timer: 1800,
+        showConfirmButton: false
+    });
+     DashboardStats();
+    Table();
+}
+  
+else{
+    Swal.fire({
+    icon: "error",
+    title: "Oops!",
+    text: data.message,
+    confirmButtonColor: "#8b0000"
+});
+}
 }
 
 logoutbtn.addEventListener("click", logout);

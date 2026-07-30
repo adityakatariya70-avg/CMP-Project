@@ -126,18 +126,7 @@
   box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
 }
 
-/* .remember {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 25px;
-  color: #555;
-}
 
-.remember input {
-  width: 18px;
-  height: 18px;
-} */
 
 .login-btn {
   width: 100%;

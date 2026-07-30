@@ -13,16 +13,16 @@ const message = document.getElementById("message");
 const button = document.getElementById("send-btn");
 const livebox = document.getElementById("livebox");
 const livebox2=document.getElementById("livebox2");
-const okbutton=document.getElementById("ok-btn");
 
-button.addEventListener("click", validdata);
+
+
 name.addEventListener("input", validname);
 email.addEventListener("input",validemail);
 mobile.addEventListener("input",validmobile);
 message.addEventListener("input",validmessage);
+button.addEventListener("click",success);
 
-
-okbutton.addEventListener("click", ()=>{
+ function reset(){
  name.style.border="";
  name.value="";
  email.style.border="";
@@ -32,16 +32,10 @@ okbutton.addEventListener("click", ()=>{
  message.style.border="";
  message.value="";
  livebox2.style.display="none";
-})
+ }
 
 
 
-function validdata() {
-  if (validname() && validemail() && validmobile() && validmessage()) {
-    livebox2.style.display="block";
-  } else {
-  }
-}
 
 function validname() {
   const validname1 = /^[A-Za-z ]{3,25}$/;
@@ -122,3 +116,41 @@ function validmessage() {
     return true;
   }
 }
+
+
+async function success() {
+  if (!validname() || !validemail() || !validmobile() || !validmessage()) {
+    return;
+  }
+  const enteredData = {
+    name: name.value.trim(),
+    email: email.value.trim(),
+    mobile: mobile.value.trim(),
+    message: message.value.trim(),
+  };
+
+  const response = await fetch("http://localhost:5000/api/admin/contact", {
+    method:"POST",
+    headers:{
+      "Content-Type": "application/json",
+    },
+    body:JSON.stringify(enteredData),
+  });
+
+  const data = await response.json();
+
+  if(response.ok){
+    Swal.fire({
+  icon: "success",
+  title: "Message Sent!",
+  text: "Thank you for contacting us. We'll get back to you soon.",
+  confirmButtonColor: "#8B0000",
+  confirmButtonText: "OK"
+});
+    reset();
+  }
+
+  }
+
+
+

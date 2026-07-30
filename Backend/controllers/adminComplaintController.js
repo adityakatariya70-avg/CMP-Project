@@ -20,6 +20,36 @@ const getallComplaints = async (req, res) => {
   }
 };
 
+
+const deleteComplaint = async (req, res) => {
+    console.log("Delete Controller Hit");
+    console.log(req.params);
+
+    try {
+        const { complaintId } = req.params;
+
+        const complaint = await complaintModel.findByIdAndDelete({
+            complaintId
+        });
+
+        if (!complaint) {
+            return res.status(404).json({
+                message: "Complaint Not Found"
+            });
+        }
+
+        return res.status(200).json({
+            message: "Complaint Deleted Successfully"
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+}
+
 const getsingleComplaint = async (req, res) => {
   try {
     const { complaintId } = req.params;
@@ -106,4 +136,5 @@ module.exports = {
   getsingleComplaint,
   updatecomplaintStatus,
   dashboardStats,
+  deleteComplaint,
 };

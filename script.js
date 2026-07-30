@@ -7,109 +7,141 @@ menuBtn.onclick = function () {
 
 const contact_name = document.getElementById("contact-name");
 const contact_email = document.getElementById("contact-email");
+const contact_number = document.getElementById("contact-number");
 const contact_text = document.getElementById("contact-text");
 const contact_button = document.getElementById("contact-send-btn");
 const livebox = document.getElementById("livebox");
-const submitlivebox = document.getElementById("submit-live-box");
-const cross = document.getElementById("cross");
 
 
 
-cross.addEventListener("click",function(){
-  submitlivebox.style.display="none";
-});
-contact_button.addEventListener("click",validinfo);
+contact_button.addEventListener("click", success);
 
-function validinfo(){
-  if(
-  validname()&&
-  validemail()&&
-  validmessage()
-  )
-  {
-    submitlivebox.style.display="flex";
-   
-    reset();
-  }
+
+
+function reset() {
+  contact_name.value = "";
+  contact_name.style.border = "";
+  contact_email.value = "";
+  contact_email.style.border = "";
+  contact_number.style.border="";
+  contact_number.value="";
+  contact_text.value = "";
+  contact_text.style.border = "";
 }
-
-function reset(){
-contact_name.value="";
-contact_name.style.border="";
-contact_email.value="";
-contact_email.style.border="";
-contact_text.value="";
-contact_text.style.border="";
-}
-
 
 function validname() {
   const name = contact_name.value.trim();
-  const validname1=/^[A-Za-z ]{3,25}$/;
+  const validname1 = /^[A-Za-z ]{3,25}$/;
 
   if (name == "") {
-    livebox.style.display="block";
-     livebox.textContent="Name Required";
-     contact_name.style.border="2px solid red";
+    livebox.style.display = "block";
+    livebox.textContent = "Name Required";
+    contact_name.style.border = "2px solid red";
     return false;
-  }
-   else if (!validname1.test(name)) {
-     livebox.style.display="block";
-      contact_name.style.border="2px solid red";
-     livebox.textContent="Invalid Name";
+  } else if (!validname1.test(name)) {
+    livebox.style.display = "block";
+    contact_name.style.border = "2px solid red";
+    livebox.textContent = "Invalid Name";
     return false;
-  }
-  
-  else{
-     livebox.style.display="none";
-   contact_name.style.border="2px solid green";
-   return true;
+  } else {
+    livebox.style.display = "none";
+    contact_name.style.border = "2px solid green";
+    return true;
   }
 }
 
-function validemail(){
+function validemail() {
   const email = contact_email.value.trim();
-   const validemail = /^[A-Za-z0-9-_+%.]+@[A-Za-z0-9-_.]+\.[A-Za-z]{2,}$/;
+  const validemail = /^[A-Za-z0-9-_+%.]+@[A-Za-z0-9-_.]+\.[A-Za-z]{2,}$/;
 
-   if (email == "") {
-     livebox.style.display="block";
-      contact_email.style.border="2px solid red";
-    livebox.textContent="Email Required";
+  if (email == "") {
+    livebox.style.display = "block";
+    contact_email.style.border = "2px solid red";
+    livebox.textContent = "Email Required";
     return false;
-  }
-
- 
-  else if (!validemail.test(email)) {
-     livebox.style.display="block";
-      contact_email.style.border="2px solid red";
-   livebox.textContent="Email Invalid!!";
+  } else if (!validemail.test(email)) {
+    livebox.style.display = "block";
+    contact_email.style.border = "2px solid red";
+    livebox.textContent = "Email Invalid!!";
     return false;
-  }
-  else{
-  livebox.style.display="none";
-      contact_email.style.border="2px solid green";
-      return true;
+  } else {
+    livebox.style.display = "none";
+    contact_email.style.border = "2px solid green";
+    return true;
   }
 }
 
-function validmessage(){
+function validnumber() {
+  const number = contact_number.value.trim();
+  const validnumber = /^\d{10}$/;
+
+  if (number == "") {
+    livebox.style.display = "block";
+    contact_text.style.border = "2px solid red";
+    livebox.textContent = "Number Required";
+    return false;
+  } else if (!validnumber.test(number)) {
+    livebox.style.display = "block";
+    contact_text.style.border = "2px solid red";
+    livebox.textContent = "enter valid number";
+    return false;
+  } else {
+    livebox.style.display = "none";
+    contact_text.style.border = "2px solid green";
+    return true;
+  }
+}
+function validmessage() {
   const message = contact_text.value.trim();
   if (message == "") {
-     livebox.style.display="block";
-      contact_text.style.border="2px solid red";
-    livebox.textContent="Message Required";
+    livebox.style.display = "block";
+    contact_text.style.border = "2px solid red";
+    livebox.textContent = "Message Required";
     return false;
-  } 
-  else if (message.length > 100) {
-     livebox.style.display="block";
-      contact_text.style.border="2px solid red";
-     livebox.textContent="message must only have letters less than 100.";
+  } else if (message.length > 100) {
+    livebox.style.display = "block";
+    contact_text.style.border = "2px solid red";
+    livebox.textContent = "message must only have letters less than 100.";
     return false;
-  } 
-  else{
-    livebox.style.display="none";
-      contact_text.style.border="2px solid green";
-      return true;
+  } else {
+    livebox.style.display = "none";
+    contact_text.style.border = "2px solid green";
+    return true;
   }
-  
-};
+}
+async function success() {
+  if (!validname() || !validemail() || !validnumber() || !validmessage()) {
+    return;
+  }
+  const enteredData = {
+    name: contact_name.value.trim(),
+    email: contact_email.value.trim(),
+    mobile: contact_number.value.trim(),
+    message: contact_text.value.trim(),
+  };
+
+  const response = await fetch("http://localhost:5000/api/admin/contact", {
+    method:"POST",
+    headers:{
+      "Content-Type": "application/json",
+    },
+    body:JSON.stringify(enteredData),
+  });
+
+  const data = await response.json();
+
+  if(response.ok){
+    Swal.fire({
+  icon: "success",
+  title: "Message Sent!",
+  text: "Thank you for contacting us. We'll get back to you soon.",
+  confirmButtonColor: "#8B0000",
+  confirmButtonText: "OK"
+});
+    reset();
+  }
+
+  }
+
+
+

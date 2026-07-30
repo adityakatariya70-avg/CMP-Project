@@ -37,7 +37,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       <div class="total-contact">
             <div class="stat-icon">📋</div>
             <h3>Total Queries</h3>
-            <div id="total-number" class="stat-number">40</div>
+            <div id="total-number" class="stat-number"></div>
             <p>Total Contact requests received by the system.</p>
         </div>
 <div class="table-section">
@@ -66,49 +66,49 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr id="table-row">
-                        <td id="table-name">Aditya katariya</td>
-                        <td id="table-email">adityakatariya70@gmail.com</td>
-                        <td id="table-date">10/07/26</td>
-                        <td id="table-status">new</td>
-                        <td id="table-btn"><button class="view-btn"> <i class="fa-solid fa-eye"></i> View</button></td>
+                <tbody id="table-row">
+                    <tr >
+                        <td id="table-name"></td>
+                        <td id="table-email"></td>
+                        <td id="table-date"></td>
+                        <td id="table-status"></td>
+                        <td id="table-btn"><button class="view-btn" onclick="viewContact('${Contact._id}')"> <i class="fa-solid fa-eye"></i> View</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 </div>
 
-<div class="contact-details">
+<div class="contact-details" id="contact-details">
     <h2>Contact Message Details</h2>
     <div class="contact-detail-box">
          <div class="details-grid">
 
         <div class="detail-item">
             <label>Full Name</label>
-            <p id="contact-name">Aditya katariya</p>
+            <p id="contact-name"></p>
         </div>
 
         <div class="detail-item">
             <label>Email Address</label>
-            <p id="contact-email">adityakatariya70@gmail.com</p>
+            <p id="contact-email"></p>
         </div>
 
         <div class="detail-item">
             <label>Mobile Number</label>
-            <p id="contact-mobile">7828604020</p>
+            <p id="contact-mobile"></p>
         </div>
 
         <div class="detail-item">
             <label>Date Submitted</label>
-            <p id="contact-date">10/07/26</p>
+            <p id="contact-date"></p>
         </div>
 
          
     </div>
  <div class="detail-item detail-message">
-            <label id="msg">Message </label>
-            <p id="contact-message"> lorem*8</p>
+            <label id="msg">Message</label>
+            <p id="contact-message"></p>
         </div>
    
 
@@ -147,6 +147,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </h5></div>
 <div class="footer-tagline">© 2026 Complaint Hub. All Rights Reserved.</div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <script src="admin-contact.js"></script>
 </html>

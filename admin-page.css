@@ -291,7 +291,25 @@ td {
 tr:hover {
   background: #f8f8f8;
 }
+.delete-btn{
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.delete-btn i{
+    font-size: 18px;
+}
+
+.delete-btn:hover{
+    background: #bb2d3b;
+    transform: scale(1.08);
+}
 #complaint-details {
   display: none;
   flex-direction: column;
@@ -462,45 +480,61 @@ tr:hover {
 
 @media screen and (max-width: 768px) {
  
-  .navbar {
-    width:368px;
-    height:120px;
-    display: flex;
+  .navbar{
+    height: 110px;
+    align-items: center;
     flex-direction: row;
-    justify-content: space-between;
-    height: fit-content;
-    min-height: 80px;
-  }
-  .logo img {
-    width: 70px;
-    height: 70px;
   }
 
-  .text u {
-    font-size: 25px;
+  .logo img{
+    position: relative;
+    right: 65px;
+    width: 60px;
+    height: 60px;
   }
-  #tagline {
+
+  .text{
+    width: 100%;
+    position: relative;
+    right: 25px;
+    height: auto;
+  }
+
+  #main-text{
+  
+    font-size: 20px;
+  }
+
+  #tagline{
+    margin: 0;
     font-size: 12px;
-    margin-left: 25px;
   }
 
-  .admin-logo {
-    margin-right: 10px;
-  }
-
-  .data {
-    background-color: #8b0000;
-    display: flex;
-    flex-direction: row;
+  .data{
+    width: 100%;
     justify-content: space-around;
-    position: absolute;
-    width: 368px;
-    height: 30px;
-    top: 100px;
+    margin-top: 10px;
+    height: auto;
   }
 
-  .nav-btn a {
-    font-size: 18px;
+  .nav-btn a{
+    font-size: 12px;
+  }
+
+  .admin-logo{
+    position: relative;
+    bottom: 90px;
+    left:190px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-text{
+    position: relative;
+    bottom: 64px;
+    left: 138px;
+    font-size: 10px;
+
   }
   .main-section{
     height:auto;
@@ -554,19 +588,29 @@ table-controls input,
   padding:5px;
 }
 
-table th{
-  padding:5px;
-  font-size: 10px;
 
-}
-table td{
-  padding:4px;
-  font-size: 10px;
-}
 
-td button{
-  padding:5px;
-}
+  table{
+    width: 350px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th{
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  td{
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  td button{
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
 .pending2,.progress2,.resolved2{
   padding: 4px;
@@ -604,7 +648,10 @@ td:last-child{
   width:60px;
   padding: 5px;
 }
-
+.delete-btn{
+  width:fit-content;
+  height: fit-content;
+}
 #complaint-details{
   margin-top:200px;
   width:95%;
