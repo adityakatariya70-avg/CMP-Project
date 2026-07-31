@@ -1,15 +1,16 @@
 /* NAVBAR */
 .header {
+  
   background-color: #fff8dc;
   display: flex;
   background-color: #8b0000;
   width: 100%;
-  height: 120px;
+  height: 100px;
 }
 
 .navbar {
   width: 100%;
-  height: 120px;
+  height: 100px;
   background-color: #8b0000;
   display: flex;
   flex-direction: column;
@@ -26,17 +27,19 @@
   display: none;
 }
 #main-text {
-  font-size: 40px;
+  padding-top: 10px;
+  font-size: 35px;
 }
 #tagline {
   font-size: 20px;
-  margin-left: 40px;
+  margin-left: 10px;
 }
 
 .data {
   height: 50px;
   width: 1000px;
   display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -63,13 +66,14 @@
 /* Main Section */
 
 .login-section {
-  min-height: 80vh;
+  padding-top: 50px;
+  height: fit-content;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f8f5e6;
-  padding: 50px 20px;
-}
+} 
 
 .login-card {
   position: relative;

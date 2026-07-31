@@ -1,21 +1,25 @@
+/* NAVBAR */
 .header{
+    position: fixed;
     background-color: #FFF8DC;
     display: flex;
     background-color: #8B0000;
     width :100%;
-    height:120px;
+    height:100px;
 }
 
 .navbar{
     width :100%;
-    height:120px;
+    height:100px;
     background-color: #8B0000;
      display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-
+#menu-btn{
+    display:none;
+}
 .text{
     display: flex;
     flex-direction: column;
@@ -23,22 +27,23 @@
     color:#FFFFFF;
 }
 #main-text{
-    font-size: 40px;
+    padding-right: 10px;
+    font-size: 35px;
 }
 #tagline{
    font-size: 20px;
-   margin-left: 40px;
-}
-#menu-btn{
-    display:none;
+   margin-left: 10px;
 }
 
 .data{
    height: 50px;
    width:1000px;
    display: flex;
+   align-items: center;
    justify-content: space-around;
 }
+     
+
 .nav-btn a{
     background-color: #8B0000;
     color: #FFFFFF;
@@ -48,20 +53,6 @@
     text-decoration: none;
 }
 
-.live-box{
-    display:none;
-    margin-left: 60px;
-    margin-bottom: 8px;
-    padding: 5px;
-    height:fit-content;
-    width: fit-content;
-    border:2px solid #050505;
-    border-radius:5px;
-    background-color: #FFF8DC;
-    font-size: 14px;
-    font-weight: 500;
-}
-
 .nav-btn a:hover{
     
     background-color: #8B0000;
@@ -69,151 +60,117 @@
     /* border : 1.5px solid white;
     border-radius: 4px; */
 }
-#register-btn a{
+#services-btn a{
     color:yellow;
     border-style:none;
 }
 
-.main-form{
-    background-color:#FFF8DC;
-    width:100%;
-    height:1000px;
-    display:flex ;
-    flex-direction: column;
-    align-items: center;
-}
-
-.heading{
-    margin-top: 20px;
-    color:#8B0000;
-    width:100%;
-    height:80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-}
-.main-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-top: 20px;
-    width: 700px;
-    height:fit-content;
-    background: #fff8f8;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+.main-section{
     
+    padding-top: 130px;
+    width:100%;
+    height: fit-content;
+    padding-bottom: 30px;
+    background-color:#FFF8DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    color:#8B0000;  
 }
 
-.main-container input,
-.main-container select,
-.main-container textarea{
-    width: 80%;
-    padding: 8px;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    border: 3px solid goldenrod;
+.service-box{
+    margin-top: 20px;
+    width:1200px;
+    display: flex;
+    justify-content: center;
+    column-gap: 200px;
+    flex-wrap: wrap;
+    background-color: #8B0000;
+    background: linear-gradient(to bottom,#fffdf5,#f5f0dc);
+}
+
+.box{
+    height:210px;
+    width:400px;
+    border:3px solid black;
     border-radius: 10px;
-    font-size: 16px;
-    margin-left: 60px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: #FFF8DC;
+    transition: 0.3s ease;
 }
- .main-container input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border: 2px solid #d89c00;
-    box-shadow: none;
+.box:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border:3px solid red;
+}
+.imagebox img{
+    width:198px;
+    height:205px;
+    background-size:auto;
+}
+.contentbox{
+    width: 330px;
+    height:220px;
+}
+.contentbox h4{
+    font-size: 25px;
+    padding-top: 10px;
+    color: #8B0000;
+}
+.service-card{
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+.contentbox h6{
+padding-left: 25px;
+    color:#444;
+    line-height:1.4;
+    font-size:15px;
+}
+.service-box h4{
+    font-size: 22px;
+    color: #8B0000;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    padding-left: 15px;
 }
 
-
-.upload input{
-    width:80%;
-    border:2px solid goldenrod;
-    padding:8px;
-    border-radius:10px;
-    text-align:center;
-    background:#fff8f8;
-    margin-left: 60px;
-}
-label{
-    font-weight:600;
-    font-size:18px;
-    margin-left: 60px;
-}
-
-.submit{
-    width:fit-content;
-    padding: 10px;
-    height:45px;
-    border:none;
-    border-radius:10px;
-    background:#8B0000;
+.register1-btn {
+    background:#b30000;
     color:white;
-    font-size:20px;
+    padding:13px 40px;
+    border-radius:50px;
+    font-size:22px;
     font-weight:bold;
     cursor:pointer;
-    transition:0.2s;
-    margin-top: 15px;
-    align-self: center;
-    margin-right: 30px;
+    transition:0.3s;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
-.submit:hover{
-    box-shadow:0 10px 20px rgba(139,0,0,.3);
-    background:#a50000;
-    transform:translateY(-3px);
-    color:rgb(249, 241, 10);
-}
-.success-message{
-    display:none;
-    background: #d4edda;
-    color: #155724;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-
-.complaint-id{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(139,0,0,.3);
-display:none;
-height: fit-content;
-width: fit-content;
-font-size: 18px;
-margin-top: 25px;
-margin-left: 182px;
-padding: 10px;
-font-weight: 400;
-background-color: #8B0000;
-border-radius: 10px;
-color:white;
-font-weight: 600;
-}
-#cross{
-    padding: 5px;
-    width:40px;
-    height:40px;
-    background-color: #8B0000;
-    color: white;
-    display: none;
-    text-align: center;
-    align-content: center;
-    cursor: pointer;
-    font-size: 25px;
-    border-radius: 50%;
-    margin-left: 620px;
-    margin-top: -45px;
+.register1-btn:hover{
+    background:#8b0000;
+    transform:scale(1.05);
 }
 .footer{
+    
     width:100%;
     height:230px;
 }
 .footer-headline{
     width:100%;
-    height:100px;    
+    height:70px;    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -224,8 +181,8 @@ font-weight: 600;
 .quick-links{
     width:100%;
     height:40px;
-      background-color: #8B0000;
-      color: white;
+    background-color: #8B0000;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -259,11 +216,11 @@ font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}   
 
 
 @media screen and (max-width:768px){
-     .header {
+      .header {
     height: auto;
   }
   .navbar {
@@ -342,75 +299,51 @@ font-weight: 600;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-.heading h5{
-    font-size:17px;
+.headings{
+    padding-top:10px;
 }
-.main-form{
-    height: 1000px;
-}
-
-.main-container{
-    width:90%;
-    height:fit-content;
-}
-.font-icons{
-    
-width:fit-content;
-height:fit-content;
-
-}
-
-.main-container input,
-.main-container select,
-.main-container textarea{
-    width:98%;
-    height:40px;
-}
-label{
-    margin-left: 0px;
-}
-.main-container input{
-    margin-left: 0px;
-}
-
-.upload{
-    margin-left: 0px;
-    width:98%;
-    display: flex;
-    text-align: center;
-    justify-content:center ;
-}
-
-.submit{
-    width:80%;  
-    margin-left:30px;
-}
-.complaint-id{
-    margin-left: 0px;
-    width:99%;
-    margin-top: 20px;
-}
-#category{
+.headings h5{
+   
     font-size: 15px;
+    padding-left: 10px;
+}
+.main-section{
     padding: 0px;
-    margin:0px;
-    margin-top: 5px;
+}
+.service-box{
+    width:368px;
+    margin-top: 0px;
     
 }
-#upload{
-    padding: 5px;
+.box{
+    width:98%;
 }
-#cross{
-    margin-left:0px;
-    margin-top: 10px;
-}
-#date{
-    size: 8px;
+.service-card {
+    width:330px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.live-box{
-    margin: 0px;
+.contentbox h4{
+    width:100%;
+  font-size: 15px;
 }
+.contentbox h6{
+    padding-left: 5px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.register1-btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    height: 40px;
+    padding-top: 10px;
+}
+
 
 .footer-headline{
     height:60px;
@@ -436,5 +369,4 @@ font-size: 10px;
 .footer{
     height: auto;
 }
-
 }
