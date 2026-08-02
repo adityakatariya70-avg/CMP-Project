@@ -1,4 +1,5 @@
 const logoutbtn = document.getElementById("logout");
+const logoutBtn =document.getElementById("logout-btn");
 const tablecontrols = document.getElementById("table-controls");
 const searchbox = document.getElementById("search-box-main");
 const filterbox = document.getElementById("filter-box");
@@ -296,6 +297,7 @@ else{
 }
 
 logoutbtn.addEventListener("click", logout);
+logoutBtn.addEventListener("click",logout);
 
 function logout(event) {
   event.preventDefault();

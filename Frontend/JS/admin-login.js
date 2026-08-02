@@ -105,6 +105,12 @@ async function success() {
       window.location.href = "admin-page.html";
     });
   } else {
-    alert(data.message);
+    Swal.fire({
+  icon: "error",
+  title: "Login Failed",
+  text: "Invalid Email or Password!",
+  confirmButtonColor: "#8b0000",
+  confirmButtonText: "Try Again"
+});
   }
 }

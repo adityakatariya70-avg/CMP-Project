@@ -5,6 +5,9 @@ if (!token) {
   window.location.replace("admin-login.html");
 }
 
+
+const logOut =document.getElementById("logOut");
+const logoutBtn=document.getElementById("logOut-btn");
 const totalNumber = document.getElementById("total-number");
 const contactTable = document.getElementById("contact-table");
 const tableRow = document.getElementById("table-row");
@@ -237,4 +240,37 @@ async function deleteContact() {
       });
     }
   }
+}
+
+
+logOut.addEventListener("click", logout);
+logoutBtn.addEventListener("click",logout);
+
+function logout(event) {
+  event.preventDefault();
+
+  Swal.fire({
+    title: "Logout?",
+    text: "Are you sure you want to logout?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, Logout",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("token");
+
+      Swal.fire({
+        icon: "success",
+        title: "Logged Out!",
+        text: "You have been logged out successfully.",
+        timer: 1500,
+        showConfirmButton: false,
+      }).then(() => {
+        window.location.replace("admin-login.html");
+      });
+    }
+  });
 }
