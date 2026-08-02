@@ -6,6 +6,10 @@ const adminRoutes = require("./routes/adminRoutes");
 const complaintRoutes = require("./routes/complaintRoutes");
 const admincomplaintRoutes = require("./routes/admincomplaintRoute");
 const admincontactRoutes= require("./routes/adminContactRoute");
+const dns = require("dns");
+
+// Set up DNS resolution
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const app = express();
 connectDB();
