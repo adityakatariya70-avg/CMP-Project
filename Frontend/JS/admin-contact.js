@@ -76,7 +76,7 @@ async function filterContact() {
 }
 
 async function totalContact() {
-  const response = await fetch("http://localhost:5000/api/admin/contact", {
+  const response = await fetch("https://complainthub-backend-p1bg.onrender.com/api/admin/contact", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -90,7 +90,7 @@ async function totalContact() {
 totalContact();
 
 async function Table() {
-  const response = await fetch("http://localhost:5000/api/admin/contact", {
+  const response = await fetch("https://complainthub-backend-p1bg.onrender.com/api/admin/contact", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -138,7 +138,7 @@ async function getContactDetails(event) {
   const selectedid = clickedButton.dataset.id;
 
   const response = await fetch(
-    `http://localhost:5000/api/admin/contact/${selectedid}`,
+    `https://complainthub-backend-p1bg.onrender.com/api/admin/contact/${selectedid}`,
     {
       method: "GET",
       headers: {
@@ -173,7 +173,7 @@ async function markRead() {
     return;
   }
   const response = await fetch(
-    `http://localhost:5000/api/admin/contact/${id}/read`,
+    `https://complainthub-backend-p1bg.onrender.com/api/admin/contact/${id}/read`,
     {
       method: "PUT",
       headers: {
@@ -206,7 +206,7 @@ async function deleteContact() {
     return;
   }
   const response = await fetch(
-    `http://localhost:5000/api/admin/contact/${id}`,
+    `https://complainthub-backend-p1bg.onrender.com/api/admin/contact/${id}`,
     {
       method: "DELETE",
       headers: {

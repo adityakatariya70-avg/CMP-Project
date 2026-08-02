@@ -85,7 +85,7 @@ if (!token) {
 
 async function DashboardStats() {
   const response = await fetch(
-    "http://localhost:5000/api/admin/complaints/dashboard",
+    "https://complainthub-backend-p1bg.onrender.com/api/admin/complaints/dashboard",
     {
       method: "GET",
       headers: {
@@ -103,7 +103,7 @@ async function DashboardStats() {
 DashboardStats();
 
 async function Table() {
-  const response = await fetch("http://localhost:5000/api/admin/complaints", {
+  const response = await fetch("https://complainthub-backend-p1bg.onrender.com/api/admin/complaints", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -158,7 +158,7 @@ async function getComplaintDetails(event) {
   currentComplaintId = selectedComplaintid;
 
   const response = await fetch(
-    `http://localhost:5000/api/admin/complaints/${selectedComplaintid}`,
+    `https://complainthub-backend-p1bg.onrender.com/api/admin/complaints/${selectedComplaintid}`,
     {
       method: "GET",
       headers: {
@@ -207,7 +207,7 @@ async function updateStatusfn() {
   const selectedStatus = updateStatus.value;
 
   const response = await fetch(
-    `http://localhost:5000/api/admin/complaints/${selectedId}`,
+    `https://complainthub-backend-p1bg.onrender.com/api/admin/complaints/${selectedId}`,
     {
       method: "PUT",
       headers: {
@@ -264,7 +264,7 @@ async function deleteComplaint(event){
   });
     if (!result.isConfirmed) return;
 console.log("Selected ID:", selectedId);
-const response= await fetch(`http://localhost:5000/api/admin/complaints/${selectedId}`,{
+const response= await fetch(`https://complainthub-backend-p1bg.onrender.com/api/admin/complaints/${selectedId}`,{
   method:"DELETE",
   headers:{
     Authorization:`Bearer ${token}`,

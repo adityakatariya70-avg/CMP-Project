@@ -120,7 +120,7 @@ async function success() {
     message: contact_text.value.trim(),
   };
 
-  const response = await fetch("http://localhost:5000/api/admin/contact", {
+  const response = await fetch("https://complainthub-backend-p1bg.onrender.com/api/admin/contact", {
     method:"POST",
     headers:{
       "Content-Type": "application/json",

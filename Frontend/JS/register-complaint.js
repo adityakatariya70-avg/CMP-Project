@@ -217,7 +217,7 @@ if(
     formData.append("location", location4.value.trim());
     formData.append("image",upload.files[0]);
 
-    const response= await fetch("http://localhost:5000/api/complaint/register",
+    const response= await fetch("https://complainthub-backend-p1bg.onrender.com/api/complaint/register",
   {
     method:"POST",
     body:formData,
