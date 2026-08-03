@@ -267,7 +267,7 @@
   margin-left: 300px;
 }
 .box-img1 {
-  background-image: url("../Images/register_complaint.png");
+  background-image: url("./Images/register_complaint.png");
   background-size: cover;
 }
 .box-img1:hover {
@@ -275,7 +275,7 @@
   transition: 0.2s;
 }
 .box-img2 {
-  background-image: url("../Images/complaint_recieved.png");
+  background-image: url("./Images/complaint_recieved.png");
   background-size: cover;
 }
 .box-img2:hover {
