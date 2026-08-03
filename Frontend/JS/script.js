@@ -77,17 +77,17 @@ function validnumber() {
 
   if (number == "") {
     livebox.style.display = "block";
-    contact_text.style.border = "2px solid red";
+    contact_number.style.border = "2px solid red";
     livebox.textContent = "Number Required";
     return false;
   } else if (!validnumber.test(number)) {
     livebox.style.display = "block";
-    contact_text.style.border = "2px solid red";
+    contact_number.style.border = "2px solid red";
     livebox.textContent = "enter valid number";
     return false;
   } else {
     livebox.style.display = "none";
-    contact_text.style.border = "2px solid green";
+    contact_number.style.border = "2px solid green";
     return true;
   }
 }
