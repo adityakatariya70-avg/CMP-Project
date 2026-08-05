@@ -106,7 +106,7 @@
 .image1 {
   height: 380px;
   width: 400px;
-  background-image: url("/Images/Download\ Customer\ Support\ Service\ for\ free.jpg");
+  background-image: url("../Images/Download\ Customer\ Support\ Service\ for\ free.jpg");
   background-size: cover;
 }
 
@@ -114,7 +114,7 @@
   height: 320px;
   width: 400px;
 
-  background-image: url("/Images/Businessman\ presenting\ form\ survey\ interview_\ _\ Premium\ Vector.jpg");
+  background-image: url("../Images/Businessman\ presenting\ form\ survey\ interview_\ _\ Premium\ Vector.jpg");
   background-size: cover;
 }
 
@@ -267,7 +267,7 @@
   margin-left: 300px;
 }
 .box-img1 {
-  background-image: url("/Images/register_complaint.png");
+  background-image: url("../Images/register_complaint.png");
   background-size: cover;
 }
 .box-img1:hover {
@@ -275,7 +275,7 @@
   transition: 0.2s;
 }
 .box-img2 {
-  background-image: url("/Images/complaint_recieved.png");
+  background-image: url("../Images/complaint_recieved.png");
   background-size: cover;
 }
 .box-img2:hover {
@@ -283,7 +283,7 @@
   transition: 0.2s;
 }
 .box-img3 {
-  background-image: url("/Images/track_complaint.png");
+  background-image: url("../Images/track_complaint.png");
   background-size: cover;
 }
 .box-img3:hover {
@@ -291,7 +291,7 @@
   transition: 0.2s;
 }
 .box-img4 {
-  background-image: url("/Images/complaint_resolved.jpg");
+  background-image: url("../Images/complaint_resolved.jpg");
   background-size: cover;
 }
 .box-img4:hover {
