@@ -103,20 +103,7 @@
   height: 800px;
   width: 400px;
 }
-.image1 {
-  height: 380px;
-  width: 400px;
-  background-image: url("/Images/customersupport.jpg");
-  background-size: cover;
-}
 
-.image2 {
-  height: 320px;
-  width: 400px;
-
-  background-image: url("/Images/businessman.jpg");
-  background-size: cover;
-}
 
 .herosection h2 {
   font-size: 45px;
@@ -266,34 +253,34 @@
   font-size: 50px;
   margin-left: 300px;
 }
-.box-img1 {
+/* .box-img1 {
   background-image: url("/Images/registercomplaint.png");
   background-size: cover;
-}
+} */
 .box-img1:hover {
   transform: translateY(10px);
   transition: 0.2s;
 }
-.box-img2 {
+/* .box-img2 {
   background-image: url("/Images/complaintrecieved.png");
   background-size: cover;
-}
+} */
 .box-img2:hover {
   transform: translateY(10px);
   transition: 0.2s;
 }
-.box-img3 {
+/* .box-img3 {
   background-image: url("/Images/trackcomplaint.png");
   background-size: cover;
-}
+} */
 .box-img3:hover {
   transform: translateY(10px);
   transition: 0.2s;
 }
-.box-img4 {
+/* .box-img4 {
   background-image: url("/Images/complaintresolved.jpg");
   background-size: cover;
-}
+} */
 .box-img4:hover {
   transform: translateY(10px);
   transition: 0.2s;
