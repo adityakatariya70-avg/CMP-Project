@@ -348,7 +348,7 @@ td button:hover {
 }
 
 
-@media (max-width: 368px) {
+@media (max-width: 768px) {
 
   .navbar{
     height: 110px;
@@ -484,7 +484,16 @@ td button:hover {
     font-weight:600;
 }
 
-  table{
+
+
+#contact-table{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+    border-radius:15px;
+    background:white;
+}
+  .table{
     width: 95%;
     display: block;
     overflow-x: auto;
